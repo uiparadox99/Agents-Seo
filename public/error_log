@@ -1,0 +1,15 @@
+[03-Nov-2025 14:01:00 UTC] PHP Warning:  require(/home/myungjxp/public_html/agents.com.pk/public../vendor/autoload.php): Failed to open stream: No such file or directory in /home/myungjxp/public_html/agents.com.pk/public/index.php on line 24
+[03-Nov-2025 14:01:00 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/myungjxp/public_html/agents.com.pk/public../vendor/autoload.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/myungjxp/public_html/agents.com.pk/public/index.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/myungjxp/public_html/agents.com.pk/public/index.php on line 24
+[17-Nov-2025 16:15:57 UTC] PHP Warning:  require(/home/myungjxp/public_html/agents.com.pk/public../vendor/autoload.php): Failed to open stream: No such file or directory in /home/myungjxp/public_html/agents.com.pk/public/index.php on line 24
+[17-Nov-2025 16:15:57 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/myungjxp/public_html/agents.com.pk/public../vendor/autoload.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/myungjxp/public_html/agents.com.pk/public/index.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/myungjxp/public_html/agents.com.pk/public/index.php on line 24
+[17-Nov-2025 16:16:21 UTC] PHP Warning:  require(/home/myungjxp/public_html/agents.com.pk/public../vendor/autoload.php): Failed to open stream: No such file or directory in /home/myungjxp/public_html/agents.com.pk/public/index.php on line 24
+[17-Nov-2025 16:16:21 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/myungjxp/public_html/agents.com.pk/public../vendor/autoload.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/myungjxp/public_html/agents.com.pk/public/index.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/myungjxp/public_html/agents.com.pk/public/index.php on line 24

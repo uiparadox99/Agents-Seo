@@ -1,0 +1,112 @@
+[
+  {
+    "name": null,
+    "english_name": "Nusk Al Hijrah",
+    "star": 2,
+    "distance": "300m",
+    "address": null,
+    "english_address": "Madinah Munawarah - Saad Bin Obada ST, 42311",
+    "phone": "966 55 322 6643 \n",
+    "email": null,
+    "website": null
+  },
+  {
+    "name": null,
+    "english_name": "Grand Plaza Badr Al Maqam Fully Renovated",
+    "star": 2,
+    "distance": "0.5km",
+    "address": "شارع زيد بن ثابت 3 شارع زيد بن ثابت, 42311",
+    "english_address": "Zaid Bin Thabit Street 3, Zaid Bin Thabit Street, 42311",
+    "phone": null,
+    "email": null,
+    "website": null
+  },
+  {
+    "name": "أصالة الألماسة\n",
+    "english_name": "Asalat Al Almasah",
+    "star": 2,
+    "distance": "1.6km",
+    "address": "7582 الربيع بنت معوذ الخزرجية, 42316",
+    "english_address": "7582 Al-Rabi’ bint Mu’awwadh Al-Khazrajiyya, 42316",
+    "phone": "966 50 887 6294 \n",
+    "email": null,
+    "website": null
+  },
+  {
+    "name": "دار اليقين\n",
+    "english_name": "Dar Al Yaqin",
+    "star": 2,
+    "distance": "1.6km",
+    "address": "العوالي العالية بني ظفر , 42316",
+    "english_address": "Al-Awali Al-Aliya Bani Zafar, 42316",
+    "phone": "966 56 159 9888 \n",
+    "email": null,
+    "website": null
+  },
+  {
+    "name": "الوحدات الاقتصادية\n",
+    "english_name": "Al Wahdat Al Iqtisadiyyah",
+    "star": 2,
+    "distance": "1.6km",
+    "address": "DMAD6600 شارع السيح, 42312",
+    "english_address": "DMAD6600 Al Seih Street, 42312",
+    "phone": null,
+    "email": null,
+    "website": null
+  },
+  {
+    "name": "صالة المدينة 2\n",
+    "english_name": "Salat Al Madinah 2",
+    "star": 2,
+    "distance": "1.6km",
+    "address": "DMAA2777 عبدالله ابن خباب ابن الارت, 42316",
+    "english_address": "DMAA2777 Abdullah Ibn Khabbab Ibn Al-Aratt, 42316 \n",
+    "phone": null,
+    "email": null,
+    "website": null
+  },
+  {
+    "name": "شقق دخيل بن نقا بن شنيشيل الرحيلي للشقق المخدومة\n",
+    "english_name": "Shuqqat Dakhil Bin Naqa Bin Shunayshil Al Ruhaili Lil Shuqaq Al Makhdumah",
+    "star": 2,
+    "distance": "2.5km",
+    "address": null,
+    "english_address": "King Abdullah Branch Road, 41311",
+    "phone": null,
+    "email": null,
+    "website": null
+  },
+  {
+    "name": "شقق الامجاد الذهبي للشقق المخدومة\n",
+    "english_name": "Shuqqat Al Amjad Al Dhahabi Lil Shuqaq Al Makhdumah",
+    "star": 2,
+    "distance": "2.5km",
+    "address": "طريق أبوبكر الصديق الفرعى حى المصانع المدينة المنورة , 82722",
+    "english_address": "Abu Bakr Al Siddiq Branch Road, Al Masani’ District, Madinah, 82722",
+    "phone": "966 54 848 5482 \n",
+    "email": null,
+    "website": null
+  },
+  {
+    "name": null,
+    "english_name": "Taj Aleiman Hotel",
+    "star": 2,
+    "distance": "2.2km",
+    "address": "شارع الأمير عبدالمجيد بن عبدالعزيز 1, 42312",
+    "english_address": "Prince Abdul Majeed Bin Abdulaziz Street 1, 42312",
+    "phone": "966 53 556 6682 \n",
+    "email": "tajaleiman22@gmail.com",
+    "website": "https://tajaleimanhotel.baab.com/home"
+  },
+  {
+    "name": "قمرة قباء",
+    "english_name": "Qamrat Quba",
+    "star": 2,
+    "distance": "2.7km",
+    "address": "DMAB5184 صفية بنت الزبير بن عبدالمطلب, 42315",
+    "english_address": "DMAB5184 Safiyya bint al-Zubayr ibn Abd al-Muttalib, 42315 \n",
+    "phone": null,
+    "email": null,
+    "website": null
+  }
+]

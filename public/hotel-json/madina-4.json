@@ -1,0 +1,659 @@
+[
+  {
+    "name": "زهرة حسن\n",
+    "english_name": "Zahrat Hassan",
+    "star": 4,
+    "distance": "3.7km",
+    "address": "حي العريض, 42314",
+    "english_address": "Prince Mouqrin Ibn Abd Al Aziz, Harith bin Zayed, Madinah 42314,",
+    "phone": "966 50 668 5858"
+  },
+  {
+    "name": "Markaa مركا",
+    "english_name": "Markaa",
+    "star": 4,
+    "distance": "4.7km",
+    "address": "4309 At Tufail Ibn Malik, 42317",
+    "english_address": "Al Khalidiyyah, Madinah 42317,",
+    "phone": null
+  },
+  {
+    "name": "شقة قباء r s 1\n",
+    "english_name": "Shaqqat Quba R S 1",
+    "star": 4,
+    "distance": "1.4km",
+    "address": "مصعب بن الزبير الدور الاول, 42315",
+    "english_address": "Al Mughaisilah, Madinah 42315",
+    "phone": null
+  },
+  {
+    "name": "مساكن ورد الفندقية\n",
+    "english_name": "Masakin Ward Al Funduqiyyah",
+    "star": 4,
+    "distance": "4.6km",
+    "address": "حجاج بن الحارث, 42361",
+    "english_address": "DMPC2712، 2712 Abdul Qahir al-Jurjani، 7199, Madinah 42361",
+    "phone": "966 55 000 1538"
+  },
+  {
+    "name": "Lafif Apartments Al-Salam",
+    "english_name": "Lafif Apartments Al-Salam",
+    "star": 4,
+    "distance": "3.9KM",
+    "address": "طريق السلام, 44443 \n",
+    "english_address": "Al Jamawat, Madinah 42371",
+    "phone": "966 9200 31548"
+  },
+  {
+    "name": "شقة فندقية حديثة بجميع المستلزمات\n\n",
+    "english_name": "Shaqqah Funduqiyyah Hadithah Bijami' Al Mustalazamat",
+    "star": 4,
+    "distance": "4.5km",
+    "address": "3274 سليم بن عقرب, 42391",
+    "english_address": "3274 Salim ibn Aqrab, 42391",
+    "phone": null
+  },
+  {
+    "name": "شقق نرمادا المفروشة 304\n\n",
+    "english_name": "Shuqqat Narmada Al Mafrushah 304",
+    "star": 4,
+    "distance": "3.0km",
+    "address": "طريق المطار, 42378",
+    "english_address": "Airport Rd, Bani Harithah, Madinah 42313,",
+    "phone": "966 50 550 2135"
+  },
+  {
+    "name": null,
+    "english_name": "Narmada Furnished Apartments 304",
+    "star": 4,
+    "distance": "2.8km",
+    "address": "شقق سكنية بابو ذر الغفاريDMAI8476 ابي ذر الغفاري, 42313",
+    "english_address": "Abi Zur Al Ghafari, Bani Harithah, Madinah 42313",
+    "phone": "966 55 509 3680"
+  },
+  {
+    "name": "شقق جادة قباء\n\n",
+    "english_name": "Shuqqat Jadat Quba",
+    "star": 4,
+    "distance": "2km",
+    "address": "\n\nطريق قباء, 32315 \n",
+    "english_address": "Abi Zur Al Ghafari, Bani Harithah, Madinah 42313",
+    "phone": "966 55 509 3680"
+  },
+  {
+    "name": "الشقق الفاخرة Modern Apartments of 3 Bedrooms 5 minutes to Haram\n\n",
+    "english_name": "Lil Shuqaq Al FakhirahModern Apartments of 3 Bedrooms 5 minutes to Haram",
+    "star": 4,
+    "distance": "2.5km",
+    "address": "المدينة المنورة قرب المسجد النبوي",
+    "english_address": "Medina, near the Prophet's Mosque",
+    "phone": null
+  },
+  {
+    "name": "استديو ليفينج للشقق الخاصة\n\n\n",
+    "english_name": "Studio Living Lil Shuqaq Al Khassah",
+    "star": 4,
+    "distance": "3.1km",
+    "address": "\n\n\n\nطريق الملك عبدالله الفرعي, 42312 \n",
+    "english_address": "King Abdullah Rd, Al Fath, Madinah",
+    "phone": "966 54 640 4949"
+  },
+  {
+    "name": "\n\n",
+    "english_name": "Apartment in Madinah",
+    "star": 4,
+    "distance": "2.2km",
+    "address": "\nشارع السيح, 42312",
+    "english_address": "Al-Sayh Street, 42312",
+    "phone": null
+  },
+  {
+    "name": "\n\n",
+    "english_name": "Luxurious Family 3 Bedroom Apartments 10 Mins Drive to Al-Masjid Nabawi",
+    "star": 4,
+    "distance": "3.7km",
+    "address": "6262 الوادي المبارك, 42351",
+    "english_address": "Al Jamiah, Madinah 42351",
+    "phone": null
+  },
+  {
+    "name": "شقق مفروشة 22\n\n\n",
+    "english_name": "Shuqqat Mafrushah 22",
+    "star": 4,
+    "distance": "2.7km",
+    "address": "المدينة المنورة, 42314",
+    "english_address": "Medina, 42314",
+    "phone": null
+  },
+  {
+    "name": "الروضة للشقق الفاخرة",
+    "english_name": "Al Rawdah Lil Shuqaq Al Fakhirah",
+    "star": 4,
+    "distance": "2.5km",
+    "address": "\n\nSalama Ibn Akwa, 42313",
+    "english_address": "Salama Ibn Akwa, 42313",
+    "phone": null
+  },
+  {
+    "name": "\n\n",
+    "english_name": "Apartment in Madinah",
+    "star": 4,
+    "distance": "2.2km",
+    "address": "شارع السيح, 42312",
+    "english_address": "Al-Sayh Street, 42312",
+    "phone": null
+  },
+  {
+    "name": "شقة فندقية حديثة بجميع المستلزمات\n\n",
+    "english_name": "Shaqqah Funduqiyyah Hadithah Bijami' Al Mustalazamat",
+    "star": 4,
+    "distance": "4.5km",
+    "address": "3274 سليم بن عقرب, 42391",
+    "english_address": "3274 Salim ibn Aqrab, 42391",
+    "phone": null
+  },
+  {
+    "name": "شقق مفروشة\n",
+    "english_name": "Shuqqat Mafrushah",
+    "star": 4,
+    "distance": "4km",
+    "address": "المدينة المنورة, 42314 \n\n",
+    "english_address": "Medina, 42314",
+    "phone": null
+  },
+  {
+    "name": "شقق سكنية بابو ذر الغفاري",
+    "english_name": "Shuqqat Sakaniyyah Bi Abu Dharr Al Ghifari",
+    "star": 4,
+    "distance": "2.8km",
+    "address": "DMAI8476 ابي ذر الغفاري, 42313",
+    "english_address": "Abi Zur Al Ghafari, Bani Harithah, Madinah 42313",
+    "phone": "966 55 509 3680"
+  },
+  {
+    "name": "زهرة حسن\n",
+    "english_name": "Zahrat Hassan",
+    "star": 4,
+    "distance": "3.7km",
+    "address": "حي العريض, 42314\n",
+    "english_address": "Prince Mouqrin Ibn Abd Al Aziz, Harith bin Zayed, Madinah 42314,",
+    "phone": "966 50 668 5858"
+  },
+  {
+    "name": "شقق نرمادا المفروشة 304\n",
+    "english_name": "Shuqqat Narmada Al Mafrushah 304",
+    "star": 4,
+    "distance": "3km",
+    "address": "طريق المطار, 42378",
+    "english_address": "Airport Rd, Bani Harithah, Madinah 42313",
+    "phone": "966 50 550 2135"
+  },
+  {
+    "name": "هذا منزلي 3\n",
+    "english_name": "Hadha Manzili 3",
+    "star": 4,
+    "distance": "3.7km",
+    "address": "DMPC3796 وكيع بن الجراح, 42364",
+    "english_address": "DMPC3796 Waki' ibn al-Jarrah, 42364",
+    "phone": null
+  },
+  {
+    "name": null,
+    "english_name": "Taibah Apartment",
+    "star": 4,
+    "distance": "3.6km",
+    "address": "طريق الامير محمد بن عبدالعزيز,",
+    "english_address": "Prince Mohammed bin Abdulaziz Road",
+    "phone": null
+  },
+  {
+    "name": "شقق جادة قباء\n",
+    "english_name": "Shuqqat Jadat Quba",
+    "star": 4,
+    "distance": "2km",
+    "address": "طريق قباء, 32315",
+    "english_address": "DMAH7452, 7452 Abdulaziz Ibn Ahmed Ibn Nasr, 4557, Al-Duwaima District, Madinah 42315",
+    "phone": null
+  },
+  {
+    "name": "\n\n",
+    "english_name": "Luxurious Family 3 Bedroom Apartments 10 Mins Drive to Al-Masjid Nabawi",
+    "star": 4,
+    "distance": "3.7km",
+    "address": "6262 الوادي المبارك, 42351",
+    "english_address": "6262 Al Wadi Al Mubarak, 42351",
+    "phone": null
+  },
+  {
+    "name": null,
+    "english_name": "Ekleel Al Fakhama",
+    "star": 4,
+    "distance": "4km",
+    "address": "DMAE6956 عمرو ابن عنمة 6956, 42316",
+    "english_address": "DMAE6956 Amr Ibn Anmah 6956, 42316",
+    "phone": null
+  },
+  {
+    "name": "رولارا بلازا\n",
+    "english_name": "Rolara Plaza",
+    "star": 4,
+    "distance": "5km",
+    "address": "الخالديه المدينه, 42392",
+    "english_address": "Al-Khalidiyah City, 42392",
+    "phone": null
+  },
+  {
+    "name": "منازل الطيف للشقق المخدومة\n",
+    "english_name": "Manazil Al Tayf Lil Shuqaq Al Makhdumah",
+    "star": 4,
+    "distance": "4.4km",
+    "address": "3150 شارع الملك عبدالعزيز 3150 . مدركه . حي الخالدية . 7785, 12873",
+    "english_address": "3150 King Abdulaziz Street, Madrakah, Al-Khalidiyah District, 7785, 12873",
+    "phone": null
+  },
+  {
+    "name": "اوركيد - لمرافق الضيافة السياحية الخاصة\n",
+    "english_name": "Orchid Lil Murafiq Al Diyafah Al Siyahiyyah Al Khassah",
+    "star": 4,
+    "distance": "2.5km",
+    "address": "DMAG2812 حبيب ابن تميم الانصاري 2812, 42312",
+    "english_address": "DMAG2812 Habib Ibn Tamim Al-Ansari 2812, 42312",
+    "phone": null
+  },
+  {
+    "name": "خان عطره البوتيك\n",
+    "english_name": "Khan Atrah Al Boutique",
+    "star": 4,
+    "distance": "1.4km",
+    "address": "‏حي المغيسلة 8491 شارع , عمرو ابن زياد, 42315",
+    "english_address": "Al-Mughaysilah District, 8491 Street, Amr Ibn Ziyad, 42315",
+    "phone": "966 55 673 6526"
+  },
+  {
+    "name": null,
+    "english_name": "Hafawah Suites",
+    "star": 4,
+    "distance": "4.3km",
+    "address": "King Abdullah Road مقابل الراشد ميغا مول, 42319",
+    "english_address": "Opposite Al Rashid Mega Mall,42319, King Abdullah Rd, Madinah",
+    "phone": "966 9200 32869"
+  },
+  {
+    "name": "استديو ليفينج للشقق الخاصة\n\n\n",
+    "english_name": "Studio Living Lil Shuqaq Al Khassah",
+    "star": 4,
+    "distance": "3.1km",
+    "address": "طريق الملك عبدالله الفرعي, 42312",
+    "english_address": "King Abdullah Branch Road, 42312",
+    "phone": "966 54 640 4949"
+  },
+  {
+    "name": "الشقق الفاخرة \n",
+    "english_name": "Al Shuqaq Al Fakhirah",
+    "star": 4,
+    "distance": "2.5km",
+    "address": "المدينة المنورة قرب المسجد النبوي,",
+    "english_address": "Medina, near the Prophet's Mosque.",
+    "phone": null
+  },
+  {
+    "name": "الدارالجميلة دارهيفاء",
+    "english_name": "Al Dar Al Jamilah Dar Haifa",
+    "star": 4,
+    "distance": "1.6km",
+    "address": "بني ظفر عائشة بنت معمر, 42316",
+    "english_address": "Bani Zafar Aisha bint Muammar, 42316",
+    "phone": null
+  },
+  {
+    "name": "البيت المديني للأجنحة السكنية الخاصة\n",
+    "english_name": "Al Bayt Al Madini Lil Ajnihah Al Sakaniyyah Al Khassah",
+    "star": 4,
+    "distance": "4.7km",
+    "address": "المدينة المنورة, 42314",
+    "english_address": "DMAK4793، Abdullah ibn Abi Zakariya، 6623, Al Aridh, Madinah 42314",
+    "phone": "966 56 987 3771"
+  },
+  {
+    "name": "أجنحة هدوء وصول ذاتي\n",
+    "english_name": "Ajnihat Hudu' Wasul Dhati",
+    "star": 4,
+    "distance": "4.5km",
+    "address": "جبار بن صخر, 42317",
+    "english_address": "Jabbar Ibn Sakhr, Al Khalidiyyah, Madinah 42317,",
+    "phone": "966 55 150 0316"
+  },
+  {
+    "name": null,
+    "english_name": "Ekleel Al Fakhama",
+    "star": 4,
+    "distance": "4km",
+    "address": "DMAE6956 عمرو ابن عنمة 6956, 42316",
+    "english_address": "DMAE6956 Amr Ibn Anmah 6956, 42316",
+    "phone": null
+  },
+  {
+    "name": "حياة روز للشقق المخدومة\n",
+    "english_name": "Hayat Rose Lil Shuqaq Al Makhdumah",
+    "star": 4,
+    "distance": "5.2km",
+    "address": "8949 ام منيع اسماء بنت عمرو الانصارية, 42383",
+    "english_address": "8949Umm Munee' Asma' bint Amr al-Ansariyyah 42383",
+    "phone": "966 55 314 4866"
+  },
+  {
+    "name": "مساكن ود الفندقية\n",
+    "english_name": "Masakin Wud Al Funduqiyyah",
+    "star": 4,
+    "distance": "4.6km",
+    "address": "حجاج بن الحارث, 42361",
+    "english_address": "Hajjaj ibn al-Harith, 42361",
+    "phone": "966 55 300 0263"
+  },
+  {
+    "name": "بيتك - Baytak\n",
+    "english_name": "Baytak - Baytak",
+    "star": 4,
+    "distance": "4.5km",
+    "address": "3818 فضاله بن هند, 42317",
+    "english_address": "DMAD3818, Fadala ibn Hind 42317, \n",
+    "phone": "966 55 012 8431"
+  },
+  {
+    "name": "أجنحة هدوء وصول ذاتي\n",
+    "english_name": "Ajnihat Hudu' Wasul Dhati",
+    "star": 4,
+    "distance": "4.5km",
+    "address": "جبار بن صخر, 42317",
+    "english_address": "Jabbar ibn Sakhr, 42317",
+    "phone": null
+  },
+  {
+    "name": "منازل الطيف للشقق المخدومة\n",
+    "english_name": "Manazil Al Tayf Lil Shuqaq Al Makhdumah",
+    "star": 4,
+    "distance": "2.4km",
+    "address": "3150 شارع الملك عبدالعزيز 3150 . مدركه . حي الخالدية . 7785, 12873",
+    "english_address": "3150 King Abdulaziz Street, Madrakah, Al-Khalidiyah District, 7785, 12873",
+    "phone": null
+  },
+  {
+    "name": "اوركيد - لمرافق الضيافة السياحية الخاصة",
+    "english_name": "Orchid Lil Murafiq Al Diyafah Al Siyahiyyah Al Khassah",
+    "star": 4,
+    "distance": "2.5km",
+    "address": "DMAG2812 حبيب ابن تميم الانصاري 2812, 42312",
+    "english_address": "DMAG2812 Habib Ibn Tamim Al-Ansari 2812, 42312",
+    "phone": null
+  },
+  {
+    "name": null,
+    "english_name": "Khair Jewaar Apartments Al Madinah",
+    "star": 4,
+    "distance": "4.8km",
+    "address": null,
+    "english_address": "Al Madinah Al Mounawwarah Apartment No.2 Ground Floor, 42331",
+    "phone": null
+  },
+  {
+    "name": "شقة السلطان غرفتان وصالة\n",
+    "english_name": "Shaqqat Al Sultan Ghurfatan Wa Salah",
+    "star": 4,
+    "distance": null,
+    "address": "4148 عبدالملك ابن سراج, 42371",
+    "english_address": "4148 Abdulmalik Ibn Siraj, 42371",
+    "phone": null
+  },
+  {
+    "name": "أجنحة طابة\n",
+    "english_name": "Ajnihat Taba",
+    "star": 4,
+    "distance": "5.5km",
+    "address": "DMAG4087 تميم ابن اسيد ابو رفاعة, 42317",
+    "english_address": "DMAG4087 Tamim Ibn Asid Abu Rifaa, 42317",
+    "phone": null
+  },
+  {
+    "name": null,
+    "english_name": "Almansour Laxury Apartments",
+    "star": 4,
+    "distance": "2.7km",
+    "address": "خلف بن هشام 2327, 42314",
+    "english_address": "Khalaf ibn Hisham 2327, 42314",
+    "phone": null
+  },
+  {
+    "name": "أجنحة المدينة للشقق المفروشة\n",
+    "english_name": "Ajnihat Al Madinah Lil Shuqaq Al Mafrushah",
+    "star": 4,
+    "distance": "3.7km",
+    "address": "DMAB3085 عمر ابن سنان, 42317",
+    "english_address": "DMAB3085 Omar Ibn Sinan, 42317",
+    "phone": null
+  },
+  {
+    "name": "مساكن المدينة المنورة\n",
+    "english_name": "Masakin Al Madinah Al Munawwarah",
+    "star": 4,
+    "distance": "3.4km",
+    "address": "سعود بن الربيع, 42314",
+    "english_address": "Saud bin Al-Rabee, 42314",
+    "phone": null
+  },
+  {
+    "name": null,
+    "english_name": "Verdun suites",
+    "star": 4,
+    "distance": "2.5km",
+    "address": null,
+    "english_address": "Mandus Bint Khallad St., 42314",
+    "phone": null
+  },
+  {
+    "name": null,
+    "english_name": "Millennium Taiba Hotel",
+    "star": 4,
+    "distance": "450m",
+    "address": "DMAD2459 مسلم بن هانيء, 42311",
+    "english_address": "DMAD2459 Muslim ibn Hani, 42311",
+    "phone": "966 14 818 7777"
+  },
+  {
+    "name": null,
+    "english_name": "Welcome Eleven 5km far from Masjid Nabawi",
+    "star": 4,
+    "distance": "2.9km",
+    "address": "طريق الملك عبدالله, 42312",
+    "english_address": "King Abdullah Road, 42312",
+    "phone": null
+  },
+  {
+    "name": null,
+    "english_name": "Al Salehiyah 2",
+    "star": 4,
+    "distance": "2.8km",
+    "address": "3291 زرعة بن عامر, 42312",
+    "english_address": "3291 Zar'ah ibn 'Amir, 42312",
+    "phone": null
+  },
+  {
+    "name": "شقق سكنية بالعريض2",
+    "english_name": "Shuqqat Sakaniyyah Bil Arid 2",
+    "star": 4,
+    "distance": "3.7km",
+    "address": "DMAC6628 الامير محمد ابن عبدالعزيز, 42314",
+    "english_address": "DMAC6628 Prince Mohammed bin Abdulaziz, 42314",
+    "phone": null
+  },
+  {
+    "name": null,
+    "english_name": "Elaf Taiba Hotel",
+    "star": 4,
+    "distance": "0.6km",
+    "address": null,
+    "english_address": "New ELAF Taiba Hotel IElaf Taiba New Hotel, Bada'ah, Madinah 42311",
+    "phone": "966 14 818 0050"
+  },
+  {
+    "name": null,
+    "english_name": "Diyar AlSaliheen Serviced Apartments",
+    "star": 4,
+    "distance": "2.7km",
+    "address": null,
+    "english_address": "8460 Sayed Al Shouhada,Al-Daraa Mosque neighborhood, Madinah 42313,",
+    "phone": "966 55 114 3446"
+  },
+  {
+    "name": "شقق نرمادا المفروشة 303\n",
+    "english_name": "Shuqqat Narmada Al Mafrushah 303",
+    "star": 4,
+    "distance": "3km",
+    "address": "طريق المطار,",
+    "english_address": "Airport Rd, Bani Harithah, Madinah 42313",
+    "phone": "966 50 550 2135"
+  },
+  {
+    "name": null,
+    "english_name": "Welcome Three 5km far from Masjid Nabawi\n",
+    "star": 4,
+    "distance": "2.9km",
+    "address": "6548 غالب ابن عبدالله, 42312",
+    "english_address": "6548 Ghalib ibn Abdullah, 42312",
+    "phone": null
+  },
+  {
+    "name": "شقة جمان طيبة \n",
+    "english_name": "Shaqqat Juman Taibah",
+    "star": 4,
+    "distance": "2.8km",
+    "address": "المدينة المنورة, 14921",
+    "english_address": "Medina, 14921",
+    "phone": null
+  },
+  {
+    "name": "نزل طيبة جادة قباء\n",
+    "english_name": "Nuzul Taibah Jadat Quba",
+    "star": 4,
+    "distance": "2km",
+    "address": "7456 وهب بن خويلد, 42315",
+    "english_address": "7456 Wahb ibn Khuwaylid, 42315",
+    "phone": null
+  },
+  {
+    "name": "وسط المدينة للشقق السكنيه\n",
+    "english_name": "Wasat Al Madinah Lil Shuqaq Al Sakaniyyah",
+    "star": 4,
+    "distance": "3km",
+    "address": "7844 ابو عبدالرحمن السلمي, 42312",
+    "english_address": "7844 Abu Abdul Rahman Al-Sulami, 42312",
+    "phone": null
+  },
+  {
+    "name": null,
+    "english_name": "Welcome Twelve 5km far from Masjid Nabawi\n",
+    "star": 4,
+    "distance": "2.9km",
+    "address": "6561 غالب ابن عبدالله, 42312",
+    "english_address": "6561 Ghalib ibn Abdullah, 42312",
+    "phone": null
+  },
+  {
+    "name": null,
+    "english_name": "Dallah Taibah Hotel",
+    "star": 4,
+    "distance": "0.6km",
+    "address": null,
+    "english_address": "Abi Zar Street 3005, Markaziah, In Front Of Gate 25 Of Masjid E Nabwi Sharif, Madinah 42311,",
+    "phone": "966 14 829 0055"
+  },
+  {
+    "name": "مسكن التل\n",
+    "english_name": "Maskan Al Tall",
+    "star": 4,
+    "distance": "3.5km",
+    "address": "6289 محمد بن ابي رزين, 42321",
+    "english_address": "6289 Muhammad bin Abi Razin, 42321",
+    "phone": null
+  },
+  {
+    "name": "شقة دار المنى الفندقية\n",
+    "english_name": "Shaqqat Dar Al Muna Al Funduqiyyah",
+    "star": 4,
+    "distance": "4.7km",
+    "address": "حي شظاه, 42361",
+    "english_address": "Shatha neighborhood, 42361",
+    "phone": null
+  },
+  {
+    "name": null,
+    "english_name": "Anarat boutique",
+    "star": 4,
+    "distance": "1.4km",
+    "address": null,
+    "english_address": "Al-Dahhak ibn Khalifa, Al Mughaisilah, Madinah 42315,",
+    "phone": null
+  },
+  {
+    "name": "شقق الوادي المبارك\n",
+    "english_name": "Shuqqat Al Wadi Al Mubarak",
+    "star": 4,
+    "distance": "3.5km",
+    "address": "عروة الوبرة رقم المنزل 4144 2, 13579",
+    "english_address": "Urwa Al-Wabra, house number 4144 2, 13579",
+    "phone": null
+  },
+  {
+    "name": null,
+    "english_name": "OrbitNet MQ9",
+    "star": 4,
+    "distance": "3.8km",
+    "address": "DMMB4632 غضيف ابن الحارث الكندي, 42351",
+    "english_address": "DMMB4632 Ghadif Ibn Al-Harith Al-Kindi, 42351",
+    "phone": null
+  },
+  {
+    "name": "مكاني\n",
+    "english_name": "Makani",
+    "star": 4,
+    "distance": "3.3km",
+    "address": "المدينة المنورة, 42317",
+    "english_address": "Medina, 42317",
+    "phone": null
+  },
+  {
+    "name": null,
+    "english_name": "MADEN Hotel",
+    "star": 4,
+    "distance": "0.6km",
+    "address": null,
+    "english_address": "King Fahd Rd, Bada'ah, Madinah 41441",
+    "phone": "966 14 820 4444"
+  },
+  {
+    "name": "اجنحة جوار الطيبة\n",
+    "english_name": "Ajnihat Jiwar Al Taibah",
+    "star": 4,
+    "distance": "3.3km",
+    "address": "DMAE5055 الامير محمد ابن عبدالعزيز, 42313",
+    "english_address": "DMAE5055 Prince Mohammed bin Abdulaziz, 42313",
+    "phone": null
+  },
+  {
+    "name": null,
+    "english_name": "Mias Al Madina Hotel`",
+    "star": 4,
+    "distance": "0.5km",
+    "address": null,
+    "english_address": "2392-2324 As Salam Rd, Al Manakhah, Madinah 42311, S",
+    "phone": "966 53 001 8899"
+  },
+  {
+    "name": null,
+    "english_name": "Dar Aleiman Al Haram",
+    "star": 4,
+    "distance": "0.6km",
+    "address": null,
+    "english_address": "Al Saha Street, Bada'ah, Madinah 42311",
+    "phone": null
+  }
+]

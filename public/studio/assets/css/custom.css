@@ -1,0 +1,17 @@
+.search-input div{
+	width: 80%;
+}
+.search-input div .input-group{
+	    height: 60px;
+}
+.template-preview-box img{
+	width: 100%;
+}
+button.undoredo{
+	background: transparent;
+    border: none;
+    padding: 0 14px;
+    color: #fff;
+    font-size: 25px;
+
+}

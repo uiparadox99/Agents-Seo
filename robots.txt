@@ -1,0 +1,8 @@
+User-agent: *
+Allow:/$
+Allow:/sitemap.xml
+
+User-agent: spambot
+Disallow: /
+
+Sitemap:https://www.agents.com.pk/sitemap.xml

@@ -1,0 +1,123 @@
+@extends('layouts.master')
+@section('taskHeader')
+ @include('includes/tasks-header')
+@endsection
+@section('content')
+<div class="container"> 
+   
+   @include('user.tasks.includes.header-links')
+   <section class="content">
+      <div class="box">
+         <div class="box-header with-border">
+            <h3 class="mb-0 text-center" style="margin: 0;font-weight: bold;">Manage Tickets  {{request()->has('date_start') && !empty(request()->get('date_start'))?' | '.request()->get('date_start').' To '.request()->get('date_end'):''}}</h3>
+            <div class="box-tools pull-right">
+               <!--<a href="{{ route('add-ticket') }}" class="btn btn-danger btn-sm btn-block">Add Ticket</a>-->
+            </div>
+         </div>
+         <div class="box-body">
+         	<div id="demo" class="" aria-expanded="true" >
+				<form class="form-validation" method="GET">
+				<div class="filters">
+					<div class="row">
+												
+						<div class="col-md-4 form-group">
+							<div class="row tasks-dates">
+								<div class="col-md-6">
+									<label>Dates Between</label>
+									<input type="text" name="date_start" placeholder="From" autocomplete="off" class="form-control datepicker  Searchdatepicker" value="{{request()->has('date_start')?request()->get('date_start'):''}}" > 
+								</div>
+								<div class="col-md-6">
+									<label>&nbsp;</label>
+									<input type="text" name="date_end" autocomplete="off" placeholder="To" class="form-control datepicker  Searchdatepicker" value="{{request()->has('date_end')?request()->get('date_end'):''}}">
+								</div>
+							</div>
+						</div>
+
+						<!-- <div class="col-md-2 form-group">
+							<label>Flight</label>
+							<select name="flight" class="form-control validate[required]">
+								<option value="">All</option>
+								@foreach($flights as $f)
+								<option value="{{ $f->id }}">{{ $f->name }}</option>
+								@endforeach
+							</select>
+						</div> -->
+						<div class="col-md-3 form-group">
+							<label>Supplier</label>
+							<select name="supplier" class="form-control validate[required]">
+								<option value="">All</option>
+								@foreach($suppliers as $s)
+								<option value="{{ $s->id }}" {{request()->has('supplier') & request()->get('supplier') == $s->id?'selected':''}}>{{ $s->name }}</option>
+								@endforeach
+							</select>
+						</div>
+						<div class="col-md-3 form-group">
+							<label>Party</label>
+							<select name="party" class="form-control validate[required] select2">
+								<option value="">All</option>
+								@foreach($parties as $p)
+								<option value="{{ $p->id }}" {{request()->has('party') & request()->get('party') == $p->id?'selected':''}}>{{ $p->name }}</option>
+								@endforeach
+							</select>
+						</div>
+
+						<div class="col-md-1 form-group">
+							<label>&nbsp;</label><br>
+							<input type="submit" class="btn btn-success" value="Search">
+						</div>
+
+					</div>
+				</div>
+			</form>
+			</div>
+            <table class="table table-bordered datatables">
+            	<thead>
+            		<tr>
+<!--             			<th width="5%">Sr No.</th> -->
+            			<th>Trans #</th>
+            			<th>Date</th>
+                        <th>Passenger Name</th>
+            			<th>Ticket No.</th>
+            			<th>Sector</th>
+                       <th>Party</th>
+            		<!-- 	<th>Paid</th>
+            		<th>Received</th>
+            		<th>Balance</th> -->
+                        <th>Supplier</th>
+            			<th>Actions</th>
+            		</tr>
+            	</thead>
+            	<tbody>
+						@php $i = 1; @endphp
+						@foreach($tickets as $t)
+						<tr>
+							<td>{{ $t->id }}</td>
+							<td>{{ date('d M Y',strtotime($t->report_date)) }}</td>
+                            <td>{{ $t->given_name }} {{ $t->surname }}</td>
+							<td>{{ $t->ticket_no }}</td>
+							<td>{{ $t->sector }}</td>
+                           <td>{{ $t->party->name }}</td>
+					<!-- 		<td>{{!is_null($t->trans)?$t->trans->cost:''}}</td>
+					<td>{{!is_null($t->trans)?$t->trans->sale:''}}</td>
+					<td>{{!is_null($t->trans)?$t->trans->from_current_balance:''}}</td> -->
+                         <td>{{ $t->supplier->name }}</td>
+                            <td> <a href="{{ url('edit-ticket').'/'.$t->id }}" class="btn btn-success btn-sm"><i class="fas fa-edit"></i></a></td>
+						</tr>
+						@endforeach
+            	</tbody>
+            </table>
+         </div>
+
+      </div>
+   </section>
+</div>
+
+@endsection
+
+@push('script')
+<script type="text/javascript">
+$(function(){
+
+});
+</script>
+@endpush

@@ -1,0 +1,65 @@
+@media screen and (max-width:720px){#navbarText{display:none}.visasheading{font-size:22px;text-align:center}.famous_visa h3,.fromheading{font-size:18px}.fromheading{text-align:center;padding:10px 5px}.related_links ul li{width:100%;margin:3px 0}.card-custom{margin: 5px 0}.card .box-head{padding:7px 2px;background:linear-gradient(45deg,#1e5799 0,#207cca 49%,#2989d8 50%,#7db9e8 100%)}.col-pd{padding-right:0!important;padding-left:0!important}}
+@media(max-width: 700px){
+	.mobile-button{
+		display: block;
+		color: #fff !important;
+	}
+	.numberlist{
+		text-align: center;
+	}
+	.numberlist ul li {
+		display: inline-block;
+		font-size: 12px;
+		margin: 0 10px;
+		width: 25% !important;
+	}
+	.numberlist ul li i{
+		font-size: 60px;
+	}
+	.flagName {
+		font-size: 10px;
+		font-weight: bold;
+		line-height: 12px;
+		margin: 0 0 10px 0;
+	}
+	.numberlist ul li a:hover{
+		color: #331eff;
+	}
+	.floting-btn{
+		font-size: 16px;
+		right: -49px;
+		padding: 7px 11px;
+	}
+	.body-card .flag-icon{
+		font-size: 55px;
+	}
+	.flag-icon span{
+		    top: 39px;
+		    font-size: 12px;
+	}
+	.card .box-head a{
+		color: #fff;
+	}
+	.numberlist ul li a:hover{
+		color: unset !important;
+		background-color: unset !important;
+	}
+	.nav-active{
+		color: #fff !important;
+	}
+	.visas-listing-box a p{
+		    font-size: 13px;
+	}
+	#popular .popular-content .popular-box img{
+		height: 111px !important;
+	}
+	#popular .popular-content .popular-box .bg-lightgrey{
+		    padding: 3px !important;
+		}
+		#popular .popular-content h4{
+			    font-size: 15px;
+		}
+		#popular .popular-content .popular-box .flag{
+			display: none;
+		}
+}

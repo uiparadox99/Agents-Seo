@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+	<sitemap>
+		<loc>https://agents.com.pk/sitemap.xml</loc>
+		
+		<lastmod>2019-10-21</lastmod>
+	</sitemap>
+
+
+	<sitemap>
+		<loc>https://agents.com.pk/package_sitemap.xml</loc>
+		
+		<lastmod>2019-10-21</lastmod>
+	</sitemap>
+
+
+
+	<sitemap>
+		<loc>https://agents.com.pk/cities_sitemap.xml</loc>
+		
+		<lastmod>2019-10-21</lastmod>
+	</sitemap>
+
+	<sitemap>
+		<loc>https://agents.com.pk/airline_sitemap.xml</loc>
+		
+		<lastmod>2019-10-21</lastmod>
+	</sitemap>
+
+	<sitemap>
+		<loc>https://agents.com.pk/travel_news_sitemap.xml</loc>
+		
+		<lastmod>2019-10-21</lastmod>
+	</sitemap>
+
+	<sitemap>
+		<loc>https://agents.com.pk/job_sitemap.xml</loc>
+		
+		<lastmod>2019-10-21</lastmod>
+	</sitemap>
+
+	<sitemap>
+		<loc>https://agents.com.pk/agents_sitemap.xml</loc>
+		
+		<lastmod>2019-10-21</lastmod>
+	</sitemap>
+
+
+</sitemapindex>

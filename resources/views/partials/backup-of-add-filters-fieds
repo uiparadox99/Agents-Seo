@@ -1,0 +1,69 @@
+      <!--<div class="form-group">-->
+                                <!--    <div class="row">-->
+                                <!--        <div class="col-md-1 col-md-offset-2">-->
+                                <!--            <label for="">Airline</label>-->
+                                <!--        </div>-->
+                                <!--        <div class="col-sm-6">-->
+                                <!--        <select name="airline" class="form-control" id="airline">-->
+                                <!--                <option value="">Select Airline</option>-->
+                                <!--                @foreach($airlines as $a)-->
+                                <!--                <option value="{{$a->id}}" {{isset($detail) && !is_null($detail) && $detail->airline ==-->
+                                <!--                    $a->id?"selected":""}}>{{$a->name}}</option>-->
+                                <!--                @endforeach-->
+                                <!--            </select>-->
+                                <!--        </div>-->
+                                <!--    </div>-->
+                                <!--</div>-->
+                                <!--<div class="form-group">-->
+                                <!--    <div class="row">-->
+                                <!--        <div class="col-md-1 col-md-offset-2">-->
+                                <!--            <label for="">Month</label>-->
+                                <!--        </div>-->
+                                <!--        <div class="col-sm-6">-->
+                                <!--            <select name="month" class="form-control" onchange="filters()">-->
+                                <!--                <option value="">By Month</option>-->
+                                <!--                <option value="01" {{isset($detail) && !is_null($detail) && $detail->month ==-->
+                                <!--                    '01'?'selected':''}}>January</option>-->
+                                <!--                <option value="02" {{isset($detail) && !is_null($detail) && $detail->month ==-->
+                                <!--                    '02'?'selected':''}}>February</option>-->
+                                <!--                <option value="03" {{isset($detail) && !is_null($detail) && $detail->month ==-->
+                                <!--                    '03'?'selected':''}}>March</option>-->
+                                <!--                <option value="04" {{isset($detail) && !is_null($detail) && $detail->month ==-->
+                                <!--                    '04'?'selected':''}}>April</option>-->
+                                <!--                <option value="05" {{isset($detail) && !is_null($detail) && $detail->month ==-->
+                                <!--                    '05'?'selected':''}}>May</option>-->
+                                <!--                <option value="06" {{isset($detail) && !is_null($detail) && $detail->month ==-->
+                                <!--                    '06'?'selected':''}}>June</option>-->
+                                <!--                <option value="07" {{isset($detail) && !is_null($detail) && $detail->month ==-->
+                                <!--                    '06'?'selected':''}}>July</option>-->
+                                <!--                <option value="08" {{isset($detail) && !is_null($detail) && $detail->month ==-->
+                                <!--                    '06'?'selected':''}}>August</option>-->
+                                <!--                <option value="09" {{isset($detail) && !is_null($detail) && $detail->month ==-->
+                                <!--                    '06'?'selected':''}}>September</option>-->
+                                <!--                <option value="10" {{isset($detail) && !is_null($detail) && $detail->month ==-->
+                                <!--                    '10'?'selected':''}}>October</option>-->
+                                <!--                <option value="11" {{isset($detail) && !is_null($detail) && $detail->month ==-->
+                                <!--                    '11'?'selected':''}}>November</option>-->
+                                <!--                <option value="12" {{isset($detail) && !is_null($detail) && $detail->month ==-->
+                                <!--                    '12'?'selected':''}}>December</option>-->
+                                <!--            </select>-->
+                                <!--        </div>-->
+                                <!--    </div>-->
+                                <!--</div>-->
+                                <!--<div class="form-group">-->
+                                <!--    <div class="row">-->
+                                <!--        <div class="col-md-1 col-md-offset-2">-->
+                                <!--            <label for="">Sort By</label>-->
+                                <!--        </div>-->
+                                <!--        <div class="col-sm-6">-->
+                                <!--            <select name="sortby" id="sort" class="form-control">-->
+                                                <!--              <option value="">All</option> -->
+                                <!--                <option value="">Nearest Date</option>-->
+                                <!--                <option value="low" {{ isset($detail) && !is_null($detail) && $detail->sortby == "low" ?-->
+                                <!--                    "selected":"" }}>Low to high prices</option>-->
+                                <!--                <option value="high" {{ isset($detail) && !is_null($detail) && $detail->sortby == "high" ?-->
+                                <!--                    "selected":"" }} >High to low prices</option>-->
+                                <!--            </select>-->
+                                <!--        </div>-->
+                                <!--    </div>-->
+                                <!--</div>-->
