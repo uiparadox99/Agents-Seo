@@ -90,42 +90,12 @@ function getSettings(){
 	}
 	return (object)$settings;
 }
-function CheckPermission($id,$cps){
-      if($cps == 'verified_agent'){
-          $agent = App\Agents::where('id',$id)->first();
-	        	$return = $agent->verified == 1?true:false;
-	    }else{
-	        	$return = true;
-	    }
-// 	$today =  date('Y-m-d h:i:s');
-
-// 	$plan     =  App\AgentSubscription::join('plan','agent_subscriptions.plan_id','plan.id')
-// 	->join('transactions','transactions.subscription_id','agent_subscriptions.id')
-// 	->join('plan_has_plans_permissions','plan.id','plan_has_plans_permissions.plan_id')
-// 	->join('plans_permissions','plans_permissions.id','plans_permissions_id')
-// 	->where('agent_subscriptions.agents_id',$id)
-// 	->where('transactions.status','paid')
-// 	->where('plan.active','1')
-// 	->where('agent_subscriptions.active','1')
-// 	->where('plans_permissions.active','1')
-// 	->where('agent_subscriptions.expairy_date','>=',$today)
-// 	->select('plans_permissions.code')->get();
-// 	$permission = array();
-// 	foreach ($plan as $key => $value) {
-// 		$permission[]  = $value->code;
-// 	}
-
-// 	if (in_array($cps,$permission)) {
-// 		$return = true;
-// 	}else{
-// 	    if($cps == 'verified_agent'){
-// 	        	$return = false;
-// 	    }else{
-// 	        	$return = true;
-// 	    }
-	
-// 	}
-	return $return;
+function CheckPermission($id, $cps) {
+    if ($cps == 'verified_agent') {
+        $agent = App\Agents::where('id', $id)->first();
+        return ($agent && $agent->verified == 1);
+    }
+    return true;
 }
 
 function renderFlags($content)

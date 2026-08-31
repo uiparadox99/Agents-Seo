@@ -314,4 +314,51 @@
 
         }
     }
-</script> @endpush
+</script> 
+@endpush
+
+@push('schema')
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "CollectionPage",
+            "@id": "{{ request()->url() }}#directory",
+            "url": "{{ request()->url() }}",
+            "name": "Travel Agents Directory in Pakistan | Agents.com.pk",
+            "isPartOf": {
+                "@id": "https://agents.com.pk/#website"
+            },
+            "description": "Directory of verified travel agents and tour operators across major cities in Pakistan."
+        },
+        {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://agents.com.pk/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Travel Agents in Pakistan",
+                    "item": "https://agents.com.pk/travel-agents-in-pakistan"
+                }
+                @if(isset($searchCity) && !empty($searchCity))
+                ,
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "{{ addslashes(ucwords(str_replace('-', ' ', $searchCity))) }}",
+                    "item": "{{ request()->url() }}"
+                }
+                @endif
+            ]
+        }
+    ]
+}
+</script>
+@endpush

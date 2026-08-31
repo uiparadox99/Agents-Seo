@@ -8,7 +8,7 @@
                 <?php else: ?>
                 <div class="search text-center" style="padding: 10px;">
                     <?php endif ?>
-                    <h1>Search for you favorite blog</h1>
+                    <h1>Search For Your Favorite Blog &amp; Travel Guides</h1>
                     <form id="searchForm" method="get" action="{{url('blogs')}}">
                         <div class="input-group input-group-lg  mb-3">
                             <input type="text" class="form-control"
@@ -136,4 +136,42 @@ $(document).ready(function() {
         }
     });
 });
-</script> @endpush
+</script> 
+@endpush
+
+@push('schema')
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "CollectionPage",
+            "@id": "https://agents.com.pk/blogs#webpage",
+            "url": "https://agents.com.pk/blogs",
+            "name": "Travel & Visa Blog | Agents.com.pk",
+            "isPartOf": {
+                "@id": "https://agents.com.pk/#website"
+            },
+            "description": "Read latest travel guides, visa rules, embassy circulars, and Umrah tips on Agents.com.pk blog."
+        },
+        {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://agents.com.pk/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Blog",
+                    "item": "https://agents.com.pk/blogs"
+                }
+            ]
+        }
+    ]
+}
+</script>
+@endpush

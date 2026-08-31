@@ -26,7 +26,7 @@
             @php
             $city = str_replace('Pakistan Embassy in ','',$detail->title);
             @endphp
-            <h2 style="font-weight: bold" class="text-capitalize">{{ strtolower($detail->title) }}</h2>
+            <h1 style="font-weight: bold; font-size: 26px;" class="text-capitalize mb-3">{{ strtolower($detail->title) }}</h1>
             @if(!empty($detail->country->country))
               <div class="row">
                 <div class="col-md-3">
@@ -99,6 +99,59 @@
             <?php endif ?>
 
         </div>
+    </div>
 </section>
-
 @endsection
+
+@push('schema')
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "GovernmentBuilding",
+            "@id": "{{ request()->url() }}#embassy",
+            "name": "{{ addslashes($detail->title) }}",
+            "url": "{{ request()->url() }}",
+            @if(!empty($detail->phone))
+            "telephone": "{{ $detail->phone }}",
+            @endif
+            @if(!empty($detail->fax))
+            "faxNumber": "{{ $detail->fax }}",
+            @endif
+            @if(!empty($detail->email))
+            "email": "{{ $detail->email }}",
+            @endif
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "{{ addslashes($detail->address ?? '') }}",
+                "addressCountry": "PK"
+            }
+        },
+        {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://agents.com.pk/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Embassies in Pakistan",
+                    "item": "https://agents.com.pk/pakistan-visa-info"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "{{ addslashes($detail->title) }}",
+                    "item": "{{ request()->url() }}"
+                }
+            ]
+        }
+    ]
+}
+</script>
+@endpush

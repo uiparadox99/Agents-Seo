@@ -945,3 +945,74 @@
 
 </script>
 @endpush
+
+@push('schema')
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "TravelAgency",
+            "@id": "{{ request()->url() }}#agency",
+            "name": "{{ addslashes($detail->business_name) }}",
+            "url": "{{ request()->url() }}",
+            @if(!empty($detail->logo))
+            "image": "{{ asset('uploads/agents/'.$detail->logo) }}",
+            @endif
+            @if(!empty($detail->phone) || !empty($detail->mobile))
+            "telephone": "{{ !empty($detail->phone) ? $detail->phone : $detail->mobile }}",
+            @endif
+            @if(!empty($detail->email))
+            "email": "{{ $detail->email }}",
+            @endif
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "{{ addslashes($detail->address ?? '') }}",
+                "addressLocality": "{{ addslashes($detail->city->name ?? 'Pakistan') }}",
+                "addressCountry": "PK"
+            },
+            "priceRange": "$$",
+            "areaServed": "Pakistan"
+        },
+        {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://agents.com.pk/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Travel Agents in Pakistan",
+                    "item": "https://agents.com.pk/travel-agents-in-pakistan"
+                },
+                @if(!empty($detail->city))
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "{{ addslashes($detail->city->name) }}",
+                    "item": "https://agents.com.pk/travel-agents-in-{{ $detail->city->slug }}"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 4,
+                    "name": "{{ addslashes($detail->business_name) }}",
+                    "item": "{{ request()->url() }}"
+                }
+                @else
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "{{ addslashes($detail->business_name) }}",
+                    "item": "{{ request()->url() }}"
+                }
+                @endif
+            ]
+        }
+    ]
+}
+</script>
+@endpush

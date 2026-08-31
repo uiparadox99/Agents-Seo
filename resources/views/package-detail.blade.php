@@ -10,6 +10,8 @@
         <div class="col-md-4">
             @if (!is_null($detail->agents_id))
             <img src="{{ url('storage/uploads/packages/' . $detail->image) }}" width="100%"
+                alt="{{ !empty($detail->image_alt) ? $detail->image_alt : $detail->name }}"
+                fetchpriority="high"
                 style="border-radius: 7px;object-fit: cover;margin-bottom: 10px; background:#f0f0f0 ">
             @endif
         </div>
@@ -428,9 +430,58 @@
     }
     $(document).ready(function () {
         $('#expandmobileSearch').click(function () {
-
             $('#mobileSearch').toggle();
         });
     });
+</script>
+@endpush
+
+@push('schema')
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Product",
+            "@id": "{{ request()->url() }}#package",
+            "name": "{{ addslashes($detail->name) }}",
+            "description": "{{ addslashes(str_limit(strip_tags($detail->content1 ?? $detail->name), 160)) }}",
+            "url": "{{ request()->url() }}",
+            @if(!empty($detail->image))
+            "image": "{{ url('storage/uploads/packages/' . $detail->image) }}",
+            @endif
+            "offers": {
+                "@type": "Offer",
+                "priceCurrency": "PKR",
+                "price": "{{ !empty($detail->price) ? $detail->price : '0' }}",
+                "availability": "https://schema.org/InStock",
+                "url": "{{ request()->url() }}"
+            }
+        },
+        {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://agents.com.pk/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Umrah Packages",
+                    "item": "https://agents.com.pk/cheap-umrah-packages"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "{{ addslashes($detail->name) }}",
+                    "item": "{{ request()->url() }}"
+                }
+            ]
+        }
+    ]
+}
 </script>
 @endpush

@@ -35,7 +35,7 @@
 
 
   $write_data .= '<url>
- <loc>https://www.visas.com.pk/cheap-umrah-packages</loc>
+ <loc>https://agents.com.pk/cheap-umrah-packages</loc>
  <changefreq>daily</changefreq>
  <priority>0.8000</priority>
  </url>';

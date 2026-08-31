@@ -373,7 +373,6 @@ $(function() {
     $("input#received_payment").keyup(function() {
         var totalPrice = $("#finalPrice small").attr("data-price");
         var customPrice = $(this).val();
-        console.log(customPrice == totalPrice);
         if (customPrice != totalPrice || customPrice == 0) {
             $("#comment").addClass("validate[required]");
         } else {

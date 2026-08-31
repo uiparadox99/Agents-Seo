@@ -141,7 +141,7 @@ class AgentController extends Controller
             $agent->phone = $phone;
             $agent->save();
         }
-            dd('phones updated..');
+        return redirect()->back()->with('success-msg', 'Phones updated successfully.');
     }
     public function SaveReview(Request $r)
     {

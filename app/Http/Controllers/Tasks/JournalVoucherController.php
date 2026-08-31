@@ -112,8 +112,7 @@ class JournalVoucherController extends Controller
             DB::commit();
         }catch (\Exception $e){
             DB::rollback();
-            $msg = $e->getMessage();
-            dd($e);
+            \Log::error("Journal Voucher Exception: " . $e->getMessage());
             Session::flash("error-msg", $msg);
             return redirect()->back()->withInput(Input::all());
         }

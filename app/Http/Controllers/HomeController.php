@@ -701,7 +701,7 @@ public function menu()
         ],
         [
             "name" => 'Umrah Packages',
-            "link" => 'cheap-umrah-packages-2019'
+            "link" => 'cheap-umrah-packages'
         ],
         [
             "name" => 'Airlines',
@@ -709,7 +709,7 @@ public function menu()
         ],
         [
             "name" => 'Latest News',
-            "link" => 'https://blog.visas.com.pk/'
+            "link" => 'blogs'
         ],
         [
             "name" => 'Advertise with us',

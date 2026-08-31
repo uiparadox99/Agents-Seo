@@ -303,8 +303,8 @@ class GeneralController extends Controller
 
             Mail::send('emails.reply', $data, function ($message) use ($myemail, $subject) {
                 $message->subject($subject);
-                $message->from('noreply@visas.com.pk', 'Visas PK');
-                $message->to($myemail, 'New inquirey');
+                $message->from(config('mail.from.address', 'noreply@agents.com.pk'), config('mail.from.name', 'Agents PK'));
+                $message->to($myemail, 'Inquiry Response');
             });
 
 
