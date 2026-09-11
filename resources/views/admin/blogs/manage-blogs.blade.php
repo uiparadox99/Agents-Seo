@@ -13,6 +13,12 @@
         <div class="row">
             <div class="col-xs-12">
                 <div class="box">
+                    <div class="box-header with-border" style="padding-bottom: 10px;">
+                        <div class="btn-group">
+                            <a href="{{ route('admin.blogs') }}" class="btn btn-{{ empty($featuredFilter) ? 'primary' : 'default' }}">All Blogs ({{ \App\Blogs::count() }})</a>
+                            <a href="{{ route('admin.blogs') }}?featured=1" class="btn btn-{{ $featuredFilter == '1' ? 'warning' : 'default' }}">⭐ Featured Only ({{ \App\Blogs::where('is_featured', 1)->count() }})</a>
+                        </div>
+                    </div>
                     <div class="box-body">
                         <table class="table table-hover datatables">
                             <thead>
@@ -29,11 +35,7 @@
                                 @foreach($blogs as $s)
                                 <tr data-id="{{$s->id}}">
                                     <td>
-                                        @if(!empty($s->image))
-                                        <img src="{{ url('storage/uploads/blogs/'.$s->image) }}" width="100px">
-                                        @else
-                                        <img src="//placehold.it/150x150">
-                                        @endif
+                                        <img src="{{ $s->image_url }}" onerror="this.onerror=null;this.src='{{ asset('images/blog-default.jpg') }}';" width="100px" style="height: 65px; object-fit: cover; border-radius: 4px;">
                                     </td>
                                     <td>
                                         {{ $s->title }}

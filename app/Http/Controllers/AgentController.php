@@ -311,7 +311,7 @@ class AgentController extends Controller
         }
     }
 }
-public function cities($slug)
+public function cities($slug = 'all')
 {
     if(!empty($slug) && $slug != 'all'){
     $data['cities'] = AgentCity::where('name','LIKE',$slug.'%')->orderBy('name','ASC')->get();
@@ -364,6 +364,7 @@ public function AgentDetail($slug)
         $v->type = 'agent';
         $v->save();
     }
+    $data['agent'] = $data['detail']; // expose as $agent so meta.blade.php generates unique per-agent title/description
     return view('agent-detail',$data);
 }
 public function previewBusiness($slug)

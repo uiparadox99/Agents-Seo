@@ -61,17 +61,19 @@
             <?php endif ?>
         </div>
         <div class="col-md-9 ">
+          
+
             @if($blogs->count() > 0)
             <div class="row">
                 @foreach ($blogs as $d)
                 <div class="col-md-6">
                     <a href="{{url('blog/'.$d->slug)}}" class="blog-link">
                         <div class="visas-blogs-box">
-                            @if(!empty($d->image))
-                            <img src="{{url('storage/uploads/blogs/'.$d->image)}}" style="width: 100%;height:200px;object-fit:cover;"  alt="{{!empty($d->image_alt)?$d->image_alt:$d->title}}">
-                            @else
-                            <img src="{{url('images/blgosplaceolder.png')}}" style="width: 100%;">
-                            @endif
+                            <img src="{{ $d->image_url }}" 
+                                 onerror="this.onerror=null;this.src='{{ asset('images/blog-default.jpg') }}';" 
+                                 style="width: 100%; height: 200px; object-fit: cover;" 
+                                 alt="{{ !empty($d->image_alt) ? $d->image_alt : $d->title }}" 
+                                 loading="lazy">
                             <div class="blog-detail">
 
 
@@ -87,9 +89,11 @@
                 </div>
                 @endforeach
             </div>
+            @if(method_exists($blogs, 'links') && $blogs->hasPages())
             <div class="text-center">
                 {!! $blogs->appends(request()->except('page'))->links() !!}
             </div>
+            @endif
             @else
             <p class="text-center" style="    margin: 59px 0;
     background: #070c39;  color: white;"><strong>No Record Found</strong></p>

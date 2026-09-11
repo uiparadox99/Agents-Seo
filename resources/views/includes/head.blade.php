@@ -46,7 +46,7 @@
                 "caption": "Agents.com.pk"
             },
             "sameAs": [
-                "https://www.facebook.com/Agents.com.pk"
+                "https://www.facebook.com/profile.php?id=61575379107956"
             ],
             "contactPoint": [
                 {
@@ -63,7 +63,7 @@
             "@id": "https://agents.com.pk/#website",
             "url": "https://agents.com.pk/",
             "name": "Agents.com.pk",
-            "description": "Pakistan's leading portal for foreign embassy information, visa requirements, verified travel agents, and Umrah packages.",
+            "description": "Compare wholesale flight fares, Umrah packages, and holiday deals uploaded directly by certified travel agents across Pakistan.",
             "publisher": {
                 "@id": "https://agents.com.pk/#organization"
             },

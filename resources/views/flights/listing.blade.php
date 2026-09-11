@@ -275,14 +275,186 @@
 
                 </div>
               @endif
-            @else
-            <br>
-            <p class="text-center"><strong>No flight added by agents</strong></p>
             @endif
         </div>
     </div>
 </section>
+
+{{-- ============================================================== --}}
+{{-- UMRAH FLIGHTS CONTENT + FAQ SECTION (Category A fix) --}}
+{{-- ============================================================== --}}
+@if(!isset($agentDetail))
+<section id="umrah-flights-content" class="container mt-5 mb-5">
+    <div class="row">
+        <div class="col-md-12">
+            <hr>
+            <h2 class="mb-3 font-weight-bold">Cheap Umrah Flights from Pakistan — How It Works</h2>
+            <p>Performing Umrah is one of the most spiritually rewarding journeys a Muslim can undertake, and finding an affordable, reliable flight is the first step to making it happen. On <strong>Agents.com.pk</strong>, registered Pakistani travel agents upload real-time Umrah flight seat allocations directly — so the fares you see here are <em>net rates from verified agents</em>, not marked-up OTA prices.</p>
+
+            <h3 class="mt-4 mb-2">Departure Cities for Umrah Flights from Pakistan</h3>
+            <p>Umrah flights are available from all major Pakistani airports. The most common departure points are:</p>
+            <ul>
+                <li><strong>Karachi (KHI) — Jinnah International Airport:</strong> Direct and connecting flights to Jeddah (JED) and Madinah (MED) via Saudia, PIA, FlyJinnah, and Air Arabia.</li>
+                <li><strong>Lahore (LHE) — Allama Iqbal International Airport:</strong> Excellent frequency to Jeddah with PIA, Saudia, Serene Air, and budget carriers.</li>
+                <li><strong>Islamabad (ISB) — Islamabad International Airport:</strong> Non-stop routes to Jeddah with PIA and Saudia; connecting options via Dubai (FlyDubai) and Sharjah (Air Arabia).</li>
+                <li><strong>Faisalabad, Multan, Peshawar, Quetta, Sialkot:</strong> Charters and seasonal direct flights, especially during peak Umrah season (Ramadan, school holidays). Contact agents for group charter options.</li>
+            </ul>
+
+            <h3 class="mt-4 mb-2">When Is the Cheapest Time to Fly for Umrah from Pakistan?</h3>
+            <p>Airfare for Umrah fluctuates significantly based on season and demand. As a general guide:</p>
+            <ul>
+                <li><strong>Off-peak (best value):</strong> Muharram and Safar months — fares from PKR 60,000–85,000 return per person for economy class.</li>
+                <li><strong>Mid-season:</strong> Rajab and Sha'ban — moderate demand, fares rising to PKR 80,000–120,000.</li>
+                <li><strong>Peak season (Ramadan &amp; Dhul Hijja):</strong> Highest demand. Fares can reach PKR 150,000–200,000+ per person. Book <strong>at least 3–6 months in advance</strong> for Ramadan flights.</li>
+            </ul>
+            <p>Group bookings through travel agents often unlock <strong>discounted bulk fares</strong> not available to individual travellers booking online. Contact agents directly through Agents.com.pk to inquire about group rates.</p>
+
+            <h3 class="mt-4 mb-2">How to Book an Umrah Flight Through an Agent</h3>
+            <ol>
+                <li><strong>Search &amp; filter</strong> flights above by departure city, month, or airline.</li>
+                <li><strong>Click the agent's listing</strong> to see their contact number and WhatsApp.</li>
+                <li><strong>Discuss fare conditions</strong> — confirm baggage allowance, refund policy, and payment method directly with the agent.</li>
+                <li><strong>Confirm your seats</strong> — most agents require a deposit (typically 50%) to confirm the booking.</li>
+                <li><strong>Receive your e-ticket</strong> — once paid in full, the agent issues the ticket within 24–48 hours.</li>
+            </ol>
+
+            {{-- FAQ ACCORDION --}}
+            <h2 class="mt-5 mb-3 font-weight-bold">Frequently Asked Questions — Umrah Flights from Pakistan</h2>
+            <div class="faq-accordion" id="umrahFlightsFaq">
+
+                <div class="card mb-2 border">
+                    <div class="card-header" style="cursor:pointer;background:#f8f9fc;" onclick="toggleFaq(this)">
+                        <strong>Q: What is the cheapest time to fly for Umrah from Pakistan?</strong>
+                    </div>
+                    <div class="card-body" style="display:none;">
+                        <p>Off-peak months such as Muharram and Safar typically offer the lowest fares — from PKR 60,000 return per person in economy class. Ramadan is the most expensive period; book 3–6 months ahead for the best rates.</p>
+                    </div>
+                </div>
+
+                <div class="card mb-2 border">
+                    <div class="card-header" style="cursor:pointer;background:#f8f9fc;" onclick="toggleFaq(this)">
+                        <strong>Q: Can I get a group discount on Umrah flights?</strong>
+                    </div>
+                    <div class="card-body" style="display:none;">
+                        <p>Yes. Many travel agents on Agents.com.pk hold bulk seat allocations on Umrah flights. Groups of 10 or more travellers can often negotiate significantly lower rates. Contact agents directly via WhatsApp or phone to discuss group pricing.</p>
+                    </div>
+                </div>
+
+                <div class="card mb-2 border">
+                    <div class="card-header" style="cursor:pointer;background:#f8f9fc;" onclick="toggleFaq(this)">
+                        <strong>Q: How do I confirm my seat with the agent after finding a fare?</strong>
+                    </div>
+                    <div class="card-body" style="display:none;">
+                        <p>Contact the agent directly using the phone number or WhatsApp button on their listing. Most agents require a deposit (typically 50% of the total fare) to hold the seat. Once the full payment is made, they issue the e-ticket within 24–48 hours.</p>
+                    </div>
+                </div>
+
+                <div class="card mb-2 border">
+                    <div class="card-header" style="cursor:pointer;background:#f8f9fc;" onclick="toggleFaq(this)">
+                        <strong>Q: Which airlines fly directly from Pakistan to Jeddah for Umrah?</strong>
+                    </div>
+                    <div class="card-body" style="display:none;">
+                        <p>Direct flights to Jeddah (JED) from Pakistan are operated by <strong>PIA</strong> (from Karachi, Lahore, Islamabad), <strong>Saudia</strong> (from Karachi, Lahore, Islamabad), <strong>Serene Air</strong>, and <strong>FlyJinnah</strong>. Connecting options via Dubai or Sharjah are available through FlyDubai and Air Arabia at competitive prices.</p>
+                    </div>
+                </div>
+
+                <div class="card mb-2 border">
+                    <div class="card-header" style="cursor:pointer;background:#f8f9fc;" onclick="toggleFaq(this)">
+                        <strong>Q: Are the fares listed here final or can they change?</strong>
+                    </div>
+                    <div class="card-body" style="display:none;">
+                        <p>Fares displayed are uploaded by agents and reflect their latest available rates. Airline ticket prices fluctuate with seat availability, so the final price must be confirmed with the agent at the time of booking. All fares are in Pakistani Rupees (PKR) unless otherwise stated.</p>
+                    </div>
+                </div>
+
+                <div class="card mb-2 border">
+                    <div class="card-header" style="cursor:pointer;background:#f8f9fc;" onclick="toggleFaq(this)">
+                        <strong>Q: Can I book a one-way Umrah flight or only return?</strong>
+                    </div>
+                    <div class="card-body" style="display:none;">
+                        <p>Most fares listed are for return trips, which is what the Saudi Umrah visa requires. However, some agents offer open-jaw tickets (fly into Jeddah, return from Madinah). Ask the agent about your specific requirement when booking.</p>
+                    </div>
+                </div>
+
+            </div>
+            {{-- END FAQ ACCORDION --}}
+        </div>
+    </div>
+</section>
+@endif
+
+@push('script')
+<script>
+function toggleFaq(header) {
+    var body = header.nextElementSibling;
+    body.style.display = (body.style.display === 'none' || body.style.display === '') ? 'block' : 'none';
+}
+</script>
+@endpush
+
+@push('schema')
+@if(!isset($agentDetail))
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "What is the cheapest time to fly for Umrah from Pakistan?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Off-peak months such as Muharram and Safar typically offer the lowest fares — from PKR 60,000 return per person in economy class. Ramadan is the most expensive period; book 3–6 months ahead for the best rates."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can I get a group discount on Umrah flights?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Many travel agents on Agents.com.pk hold bulk seat allocations on Umrah flights. Groups of 10 or more travellers can often negotiate significantly lower rates. Contact agents directly via WhatsApp or phone to discuss group pricing."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How do I confirm my seat with the agent after finding a fare?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Contact the agent directly using the phone number or WhatsApp button on their listing. Most agents require a deposit (typically 50% of the total fare) to hold the seat. Once the full payment is made, they issue the e-ticket within 24–48 hours."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Which airlines fly directly from Pakistan to Jeddah for Umrah?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Direct flights to Jeddah (JED) from Pakistan are operated by PIA (from Karachi, Lahore, Islamabad), Saudia (from Karachi, Lahore, Islamabad), Serene Air, and FlyJinnah. Connecting options via Dubai or Sharjah are available through FlyDubai and Air Arabia."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Are the fares listed here final or can they change?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Fares displayed are uploaded by agents and reflect their latest available rates. Airline ticket prices fluctuate with seat availability, so the final price must be confirmed with the agent at the time of booking."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can I book a one-way Umrah flight or only return?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Most fares listed are for return trips, which is what the Saudi Umrah visa requires. However, some agents offer open-jaw tickets (fly into Jeddah, return from Madinah). Ask the agent about your specific requirement when booking."
+            }
+        }
+    ]
+}
+</script>
+@endif
+@endpush
+
 @endsection
+
 @push('script')
 <script type="text/javascript">
    function filters(){

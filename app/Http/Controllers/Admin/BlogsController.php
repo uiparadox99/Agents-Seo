@@ -15,12 +15,18 @@ use Input;
 
 class BlogsController extends Controller
 {
-      public $filePath = 'storage/uploads/blogs';
+      // FIXED: Save to public/storage/uploads/blogs so images are web-accessible
+      public $filePath = 'public/storage/uploads/blogs';
       public function index(Request $r)
       {
-      	$data['blogs'] = Blogs::all();
+          $query = Blogs::orderBy('id', 'DESC');
+          // B.2 fix: apply featured filter when ?featured=1 is passed
+          if ($r->get('featured') == '1') {
+              $query = $query->where('is_featured', 1);
+          }
+          $data['blogs'] = $query->get();
+          $data['featuredFilter'] = $r->get('featured', '');
       	return view('admin.blogs.manage-blogs',$data);
-      
       }
        public function saveBlog(Request $req){
 
@@ -44,7 +50,11 @@ class BlogsController extends Controller
         if (!empty($req->image)) {
             $filename = Input::file('image')->getClientOriginalName();
             $value = $fileNewName = Guid()."-".preg_replace('/\s/', '-',$filename);
-            Input::file('image')->move($this->filePath, $fileNewName);
+            $uploadDir = public_path('storage/uploads/blogs');
+            if (!file_exists($uploadDir)) {
+                mkdir($uploadDir, 0777, true);
+            }
+            Input::file('image')->move($uploadDir, $fileNewName);
 
             $blog->image          = $fileNewName;
         }
@@ -66,6 +76,7 @@ class BlogsController extends Controller
         $blog->content           = $req->content;
         $blog->image_alt           = $req->image_alt;
         $blog->blog_category_id           = $req->category;
+        $blog->is_featured = ($req->has('is_featured') || $req->get('is_featured') == '1') ? 1 : 0;
         $isSave                     = $blog->save();
 
         if ($isSave) {
@@ -133,14 +144,15 @@ class BlogsController extends Controller
     }
     public function SaveFeatured(Request $req)
     {
-    	   $visa 			= Blogs::where('id', $req->id)->first();
-        $visa->is_featured 	= $req->is_featured;
-        $isSave 		= $visa->save();
-        if ($isSave) {
-            return response()->json(["notify"=>true, "msg"=>"Success"]);
-        }else{
-            return response()->json(["notify"=>false, "msg"=>"Fail"]);
+        $visa = Blogs::where('id', $req->id)->first();
+        if ($visa) {
+            $visa->is_featured = ($req->is_featured == 1 || $req->is_featured == '1') ? 1 : 0;
+            $isSave = $visa->save();
+            if ($isSave) {
+                return response()->json(["notify"=>true, "msg"=>"Success"]);
+            }
         }
+        return response()->json(["notify"=>false, "msg"=>"Fail"]);
     }
 
 }

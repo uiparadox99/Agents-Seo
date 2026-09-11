@@ -25,7 +25,7 @@
         <p class="mt-2">{{ !empty($setting->website_desc) ? $setting->website_desc : 'Agents.com.pk is Pakistan\'s dedicated platform for embassy contacts, visa guidelines, Umrah packages, flight tickets, and certified travel agents across Pakistan.' }}</p>
       </div>
 
-      <div class="col-md-3 im-links">
+      <div class="col-md-4 im-links">
         <h4 class="text-uppercase font-weight-bold">Important Links</h4>
         <div class="mt-3">
           <p><a href="{{ url('cheap-umrah-packages') }}">Umrah Packages</a></p>
@@ -43,25 +43,19 @@
         </div>
       </div>
 
-      <div class="col-md-5">
+      <div class="col-md-4">
         <h4 class="text-uppercase font-weight-bold">Follow Us</h4>
         <div class="mt-3">
-          <?php if (!$detect->isMobile()): ?>
-            <div class="fb-page" 
-                 data-tabs="timeline"
-                 data-href="https://www.facebook.com/Agents.com.pk"
-                 data-width="450" 
-                 data-height="300"
-                 data-small-header="true"
-                 data-adapt-container-width="true"></div>
-          <?php else: ?>
-            <div class="fb-page" 
-                 data-href="https://www.facebook.com/Agents.com.pk/" 
-                 data-width="280" 
-                 data-height="300" 
-                 data-small-header="true" 
-                 data-adapt-container-width="true"></div>
-          <?php endif ?>
+          <p style="font-size: 14px; opacity: 0.85; line-height: 1.6;">Stay connected with us for real-time flight deals, verified Umrah packages, and embassy visa updates.</p>
+          <div class="mt-3">
+            <a href="https://www.facebook.com/profile.php?id=61575379107956" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="btn text-white font-weight-bold shadow-sm d-inline-flex align-items-center" 
+               style="background-color: #1877F2; border: 1px solid #1877F2; border-radius: 6px; padding: 10px 20px; font-size: 14px;">
+              <i class="fab fa-facebook-f mr-2" style="font-size: 16px;"></i> Follow us on Facebook
+            </a>
+          </div>
         </div>
       </div>
     </div>

@@ -14,11 +14,14 @@
         <div class="col-md-9">
             <h1 class="font-weight-bold mb-3" style="font-size: 26px;">{{ ucfirst($detail->title) }}</h1>
             
-            @if(!empty($detail->image))
             <div class="mb-3">
-                <img src="{{ url('storage/uploads/blogs/'.$detail->image) }}" class="img-fluid rounded" style="width: 100%; max-height: 480px; object-fit: cover;" alt="{{ !empty($detail->image_alt) ? $detail->image_alt : $detail->title }}" fetchpriority="high">
+                <img src="{{ $detail->image_url }}" 
+                     onerror="this.onerror=null;this.src='{{ asset('images/blog-default.jpg') }}';" 
+                     class="img-fluid rounded" 
+                     style="width: 100%; max-height: 480px; object-fit: cover;" 
+                     alt="{{ !empty($detail->image_alt) ? $detail->image_alt : $detail->title }}" 
+                     fetchpriority="high">
             </div>
-            @endif
 
             <div class="row align-items-center py-2 mb-3 border-bottom border-top">
                 <div class="col-md-7">

@@ -739,21 +739,25 @@ public function searchByAlpha($q)
 }
 public function blogs(Request $r)
 {
-    $blog = Blogs::whereNotNull('id');
+    $blog = Blogs::where('is_featured', 1);
     if (!empty($r->q)) {
         $blog = $blog->where('title','LIKE','%'.$r->q.'%');
     }
-    $data['blogs'] = $blog->paginate(10);
+    $data['blogs'] = $blog->orderBy('id', 'DESC')->get();
     return view('blogs',$data);
 
 }
 public function blogDetail($slug)
 {
-     $data['detail'] = Blogs::where('slug',$slug)->first();
-     $data['meta_title'] = $data['detail']->meta_title;
-       $data['meta_description'] = $data['detail']->meta_desc;
-    return view('blog-detail',$data);
-
+    $detail = Blogs::where('slug', $slug)->first();
+    if (!$detail) {
+        abort(404);
+    }
+    $data['detail'] = $detail;
+    $data['blog'] = $detail;
+    $data['meta_title'] = !empty($detail->meta_title) ? $detail->meta_title : ($detail->title . ' | Agents.com.pk Blog');
+    $data['meta_description'] = !empty($detail->meta_desc) ? $detail->meta_desc : str_limit(strip_tags($detail->content ?? ''), 160);
+    return view('blog-detail', $data);
 }
 public function RelatedSites()
 {

@@ -91,7 +91,27 @@
  <priority>0.8000</priority>
  </url>';
   $write_data .= '<url>
- <loc>https://agents.com.pk/login</loc>
+ <loc>https://agents.com.pk/travel-agents-in-pakistan</loc>
+ <changefreq>daily</changefreq>
+ <priority>0.9000</priority>
+ </url>';
+  $write_data .= '<url>
+ <loc>https://agents.com.pk/sasti-tickets</loc>
+ <changefreq>daily</changefreq>
+ <priority>0.9000</priority>
+ </url>';
+  $write_data .= '<url>
+ <loc>https://agents.com.pk/tour-packages</loc>
+ <changefreq>daily</changefreq>
+ <priority>0.9000</priority>
+ </url>';
+  $write_data .= '<url>
+ <loc>https://agents.com.pk/umrah-hotels</loc>
+ <changefreq>daily</changefreq>
+ <priority>0.8000</priority>
+ </url>';
+  $write_data .= '<url>
+ <loc>https://agents.com.pk/blogs</loc>
  <changefreq>daily</changefreq>
  <priority>0.8000</priority>
  </url>';

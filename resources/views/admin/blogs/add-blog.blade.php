@@ -50,6 +50,21 @@
                                 <div class="form-group">
                                     <div class="row">
                                         <div class="col-md-1 col-md-offset-2">
+                                            <label>Featured</label>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="checkbox" style="margin-top: 5px;">
+                                                <label>
+                                                    <input type="checkbox" name="is_featured" value="1" {{ (isset($detail) && $detail->is_featured == 1) ? 'checked' : '' }}>
+                                                    <strong>Mark as Featured Article</strong> (will appear in "Featured Only" tab)
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-1 col-md-offset-2">
                                             <label for="">Image</label>
                                         </div>
                                         @if(isset($detail)&&!is_null($detail->image))
@@ -57,7 +72,7 @@
                                             <input type="file" name="image" class="form-control" value="">
                                         </div>
                                         <div class="col-sm-3">
-                                            <img src="{{ url('storage/uploads/blogs/'.$detail->image) }}" width="30%">
+                                            <img src="{{ $detail->image_url }}" onerror="this.onerror=null;this.src='{{ asset('images/blog-default.jpg') }}';" width="30%">
                                         </div>
 
                                         @else

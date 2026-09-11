@@ -18,16 +18,18 @@ $metaKeywords = "";
 $ogImage = $defaultImage;
 $ogType = "website";
 
-if (!empty($meta_title)) {
+$blogObj = (isset($blog) && is_object($blog)) ? $blog : ((isset($detail) && is_object($detail) && (request()->is('blog/*') || request()->is('blog'))) ? $detail : null);
+
+if ($blogObj) {
+    $title = !empty($blogObj->meta_title) ? $blogObj->meta_title : ($blogObj->title . " | Agents.com.pk Blog");
+    $metaDesc = !empty($blogObj->meta_desc) ? $blogObj->meta_desc : (!empty($blogObj->meta_description) ? $blogObj->meta_description : str_limit(strip_tags($blogObj->content ?? ''), 160));
+    $metaKeywords = !empty($blogObj->keywords) ? $blogObj->keywords : $blogObj->title;
+    $ogImage = isset($blogObj->image_url) ? $blogObj->image_url : (!empty($blogObj->image) ? asset('storage/uploads/blogs/' . $blogObj->image) : asset('images/blog-default.jpg'));
+    $ogType = "article";
+} elseif (!empty($meta_title)) {
     $title = $meta_title;
     $metaDesc = !empty($meta_description) ? $meta_description : $meta_title;
     $metaKeywords = $meta_title;
-} elseif (isset($blog) && is_object($blog)) {
-    $title = !empty($blog->meta_title) ? $blog->meta_title : $blog->title . " | Agents.com.pk Blog";
-    $metaDesc = !empty($blog->meta_description) ? $blog->meta_description : str_limit(strip_tags($blog->content ?? ''), 160);
-    $metaKeywords = !empty($blog->keywords) ? $blog->keywords : $blog->title;
-    $ogImage = !empty($blog->image) ? asset('uploads/blogs/' . $blog->image) : $defaultImage;
-    $ogType = "article";
 } elseif (isset($agent) && is_object($agent)) {
     $title = ($agent->business_name ?? 'Travel Agent') . " - Travel Agent in " . ($agent->city->name ?? 'Pakistan') . " | Agents.com.pk";
     $metaDesc = "Contact " . ($agent->business_name ?? 'Travel Agent') . " in " . ($agent->city->name ?? 'Pakistan') . ". Find phone number, address, Umrah packages, flight tickets, and visa services.";
@@ -37,55 +39,105 @@ if (!empty($meta_title)) {
     $title = !empty($content->meta_title) ? $content->meta_title : ($content->title ?? ucwords(str_replace('-', ' ', $country)) . " Embassy & Visa Guide");
     $metaDesc = !empty($content->meta_desc) ? $content->meta_desc : str_limit(strip_tags($content->content ?? ''), 160);
     $metaKeywords = !empty($content->keywords) ? $content->keywords : $title;
+} elseif (isset($agentDetail) && is_object($agentDetail) && request()->is('*/sasti-tickets*')) {
+    $agentBiz = $agentDetail->business_name ?? 'Travel Agent';
+    $title = str_limit($agentBiz . ' — Sasti Tickets & Cheap Flights | Agents.com.pk', 60);
+    $metaDesc = str_limit('Browse cheap flight tickets and air deals by ' . $agentBiz . '. Compare fares and book directly with this verified travel agent.', 155);
+    $metaKeywords = $agentBiz . ', Sasti Tickets, Cheap Flights, Air Tickets';
+    $ogImage = !empty($agentDetail->logo) ? asset('uploads/agents/' . $agentDetail->logo) : $defaultImage;
+} elseif (isset($agentDetail) && is_object($agentDetail) && request()->is('*/umrah-hotels*')) {
+    $agentBiz = $agentDetail->business_name ?? 'Travel Agent';
+    $title = str_limit($agentBiz . ' — Umrah Hotels in Makkah & Madinah | Agents.com.pk', 60);
+    $metaDesc = str_limit('Browse Makkah and Madinah Umrah hotel deals by ' . $agentBiz . '. Best rates near Haram for groups and individuals.', 155);
+    $metaKeywords = $agentBiz . ', Umrah Hotels, Makkah Hotels, Madinah Hotels';
+    $ogImage = !empty($agentDetail->logo) ? asset('uploads/agents/' . $agentDetail->logo) : $defaultImage;
+} elseif (isset($agentDetail) && is_object($agentDetail) && request()->is('*/umrah-tickets*')) {
+    $agentBiz = $agentDetail->business_name ?? 'Travel Agent';
+    $title = str_limit($agentBiz . ' — Umrah Flights & Group Seats | Agents.com.pk', 60);
+    $metaDesc = str_limit('View Umrah flight fares and group seat availability from ' . $agentBiz . '. Cheap Umrah tickets to Jeddah & Madinah.', 155);
+    $metaKeywords = $agentBiz . ', Umrah Tickets, Umrah Flights, Group Fares';
+    $ogImage = !empty($agentDetail->logo) ? asset('uploads/agents/' . $agentDetail->logo) : $defaultImage;
 } elseif (request()->is('/') || $currentUrl == url('/')) {
-    $title = "Embassies and Consulates in Pakistan - Travel & Visa Guide | Agents.com.pk";
-    $metaDesc = "Find verified foreign embassies in Pakistan with addresses, phone numbers, visa requirements, Umrah packages, cheap air tickets, and trusted travel agents.";
-    $metaKeywords = "Embassies in Pakistan, Visa Requirements, Travel Agents Pakistan, Umrah Packages, Flight Tickets";
+    $title = "Pakistan's Premier Travel Marketplace — Cheap Tickets, Tours & Verified Agents | Agents.com.pk";
+    $metaDesc = "Compare wholesale flight fares, Umrah packages, and holiday deals uploaded directly by certified travel agents across Pakistan.";
+    $metaKeywords = "Travel Agents Pakistan, Sasti Tickets, Cheap Flights, Umrah Packages, Tour Packages Pakistan, Travel Marketplace";
+} elseif (request()->is('sasti-tickets*')) {
+    $title = "Sasti Tickets — Cheap Flights from Verified Agents | Agents.com.pk";
+    $metaDesc = "Compare live cheap domestic and international airfares uploaded directly by certified travel agents across Pakistan.";
+    $metaKeywords = "Sasti Tickets, Cheap Flights Pakistan, Airline Tickets, Airfare Deals, Cheap Air Tickets, Umrah Flights";
+} elseif (request()->is('tour-packages/*') && isset($detail) && is_object($detail)) {
+    $pkgTitle = !empty($detail->title) ? $detail->title : 'Tour Package';
+    $title = str_limit($pkgTitle, 42) . " | Agents.com.pk";
+    $metaDesc = str_limit("Book " . $pkgTitle . " from certified Pakistani travel agents. Starting from Rs " . ($detail->price ?? '0') . " for " . ($detail->days ?? '1') . " days. View itinerary and inclusions.", 155);
+    $metaKeywords = $pkgTitle . ", Tour Packages Pakistan, Holiday Deals";
+    if (!empty($detail->image)) {
+        $ogImage = asset('storage/uploads/packages/' . $detail->image);
+    }
+} elseif (request()->is('tour-packages*')) {
+    $title = "Tour Packages — Holiday Deals from Verified Agents | Agents.com.pk";
+    $metaDesc = "Compare domestic and international tour packages with hotels and transport listed directly by certified travel agents across Pakistan.";
+    $metaKeywords = "Tour Packages Pakistan, Holiday Packages, Northern Areas Tour, International Tour Packages, Dubai Tours, Turkey Packages";
 } elseif (request()->is('travel-agents-in-pakistan') || request()->is('travel-agents-in-*')) {
     $citySegment = request()->segment(1);
     $cityName = str_replace('travel-agents-in-', '', $citySegment);
     $cityName = ($cityName !== 'travel-agents-in-pakistan') ? ucwords(str_replace('-', ' ', $cityName)) : 'Pakistan';
-    $title = "Top Verified Travel Agents in {$cityName} - Umrah & Tour Packages | Agents.com.pk";
-    $metaDesc = "Find verified travel agents and tour operators in {$cityName}. Compare Umrah packages, flight ticket deals, visa assistance, and customer reviews.";
+    $title = "Verified Travel Agents in {$cityName} — Tickets & Tours | Agents.com.pk";
+    $metaDesc = "Find and contact certified travel agents in {$cityName} for wholesale flight fares, Umrah packages, and holiday tour deals.";
     $metaKeywords = "Travel Agents {$cityName}, Umrah Packages {$cityName}, Tour Operators Pakistan";
 } elseif (request()->is('cheap-umrah-packages*') || request()->is('umrah-packages*')) {
-    $title = "Cheap Umrah Packages from Pakistan - Economy & 5-Star Deals | Agents.com.pk";
-    $metaDesc = "Compare latest budget and luxury Umrah packages from certified travel agents across Pakistan. Complete packages with visa, flights, and hotels in Makkah and Madinah.";
+    $title = "Cheap Umrah Packages — Hotel & Visa by Verified Agents | Agents.com.pk";
+    $metaDesc = "Compare all-inclusive Umrah packages with hotels, visas, and transfers listed directly by certified travel agents across Pakistan.";
     $metaKeywords = "Cheap Umrah Packages, Economy Umrah Deals, Umrah Packages Pakistan, Umrah Visa";
-} elseif (request()->is('sasti-tickets*')) {
-    $title = "Sasti Tickets - Cheap Flights & Airfare Deals in Pakistan | Agents.com.pk";
-    $metaDesc = "Book cheap flights and domestic/international airline tickets from Pakistan. Compare low-cost airfares and special airline offers.";
-    $metaKeywords = "Sasti Tickets, Cheap Flights Pakistan, Airline Tickets, Airfare Deals";
+} elseif (request()->is('cheap-umrah-flights-from-pakistan*')) {
+    $title = "Cheap Umrah Flights — Group Fares by Verified Agents | Agents.com.pk";
+    $metaDesc = "Compare live seat allocations and cheap Umrah group flight fares to Saudi Arabia uploaded directly by verified travel agents across Pakistan.";
+    $metaKeywords = "Cheap Umrah Flights, Jeddah Flights, Madinah Air Tickets, Umrah Airfare Pakistan";
 } elseif (request()->is('umrah-hotels*')) {
-    $title = "Umrah Hotels in Makkah & Madinah - Best Rates | Agents.com.pk";
-    $metaDesc = "Find top-rated Umrah hotels in Makkah and Madinah close to Haram. Compare hotel prices, distances, and amenities.";
+    $title = "Umrah Hotels Near Haram — Verified Agent Deals | Agents.com.pk";
+    $metaDesc = "Browse verified agent-listed hotel deals in Makkah and Madinah with walking distance to Haram and best group room rates.";
     $metaKeywords = "Umrah Hotels, Makkah Hotels, Madinah Hotels, Haram Distance Hotels";
 } elseif (request()->is('about-us') || request()->is('about')) {
-    $title = "About Us - Pakistan's Leading Travel & Embassy Portal | Agents.com.pk";
-    $metaDesc = "Learn about Agents.com.pk, Pakistan's trusted platform for foreign embassy information, visa requirements, certified travel agents, and Umrah packages.";
-    $metaKeywords = "About Agents.com.pk, Embassy Information Pakistan, Travel Portal";
+    $title = "About Us — Pakistan's Verified Travel Marketplace | Agents.com.pk";
+    $metaDesc = "Learn how Agents.com.pk connects travelers directly with certified travel agents across Pakistan for cheap flights and Umrah packages.";
+    $metaKeywords = "About Agents.com.pk, Travel Marketplace Pakistan, Travel Portal";
 } elseif (request()->is('contact-us') || request()->is('contact')) {
-    $title = "Contact Us - Agents.com.pk Support & Inquiries";
-    $metaDesc = "Get in touch with Agents.com.pk team for business inquiries, listing your travel agency, advertisement, or support.";
+    $title = "Contact Us — Support for Travelers & Travel Agents | Agents.com.pk";
+    $metaDesc = "Contact the Agents.com.pk team for traveler assistance, agency verification, or listing ticket and tour package deals across Pakistan.";
     $metaKeywords = "Contact Agents.com.pk, Travel Agency Listing Support, Customer Care";
 } elseif (request()->is('privacy-policy') || request()->is('terms-conditions')) {
     $title = "Privacy Policy & Terms of Service | Agents.com.pk";
     $metaDesc = "Review the Privacy Policy, data protection guidelines, and Terms of Use for Agents.com.pk.";
     $metaKeywords = "Privacy Policy, Terms of Service, Agents.com.pk Terms";
 } elseif (request()->is('blogs') || request()->is('blog')) {
-    $title = "Travel & Visa Blog - Latest Updates, Guides & News | Agents.com.pk";
-    $metaDesc = "Read expert travel guides, latest visa updates, airline circulars, and Umrah guidelines on the Agents.com.pk blog.";
+    $title = "Travel Blog — Guides, Umrah Advice & Visa Tips | Agents.com.pk";
+    $metaDesc = "Read expert travel guides, Umrah tips, visa procedures, and flight advice curated by certified travel professionals across Pakistan.";
     $metaKeywords = "Travel Blog Pakistan, Visa Updates, Umrah Guide, Travel News";
+} elseif (request()->is('airlines') || request()->is('airline/*')) {
+    $title = "Airlines in Pakistan — Flight Routes & Deals | Agents.com.pk";
+    $metaDesc = "Explore domestic and international airlines operating in Pakistan with flight schedules, baggage policies, and verified agent fares.";
+    $metaKeywords = "Airlines in Pakistan, Flight Schedules, Air Tickets Pakistan";
+} elseif (request()->is('airline-circulars*') || request()->is('airline-updates*') || request()->is('airline-special-offers*')) {
+    $title = "Airline Circulars & Special Offers | Agents.com.pk";
+    $metaDesc = "Stay updated with latest airline circulars, operational notices, and special flight discount offers in Pakistan.";
+    $metaKeywords = "Airline Circulars, Flight Offers, Travel Advisories Pakistan";
+} elseif (request()->is('travel-news*')) {
+    $title = "Pakistan Travel News & Aviation Updates | Agents.com.pk";
+    $metaDesc = "Get real-time news on Pakistan tourism, airline developments, international travel guidelines, and visa policies.";
+    $metaKeywords = "Pakistan Travel News, Aviation News, Tourism Pakistan";
+} elseif (request()->is('cities')) {
+    $title = "Travel Agents by City in Pakistan — Directory | Agents.com.pk";
+    $metaDesc = "Browse certified travel agents across Karachi, Lahore, Islamabad, Rawalpindi, Faisalabad, Peshawar, and other cities in Pakistan.";
+    $metaKeywords = "Travel Agents Directory, Agents by City Pakistan";
 } else {
-    $title = "Foreign Embassies in Islamabad, Pakistan - Address & Contact Details | Agents.com.pk";
-    $metaDesc = "Comprehensive directory of foreign embassies and consulates in Islamabad, Pakistan including contact numbers, official addresses, and visa guides.";
-    $metaKeywords = "Foreign Embassies Islamabad, Consulates in Pakistan, Visa Guidance";
+    $title = "Pakistan's Premier Travel Marketplace — Cheap Tickets & Tours | Agents.com.pk";
+    $metaDesc = "Compare wholesale flight fares, Umrah packages, and holiday deals uploaded directly by certified travel agents across Pakistan.";
+    $metaKeywords = "Travel Agents Pakistan, Cheap Flights, Umrah Packages, Tour Packages";
 }
 
 // Clean sanitized output strings
-$cleanTitle = e(strip_tags($title));
-$cleanDesc  = e(strip_tags($metaDesc));
-$cleanKeywords = e(strip_tags($metaKeywords));
+$cleanTitle = trim(preg_replace('/\s+/', ' ', strip_tags($title)));
+$cleanDesc  = trim(preg_replace('/\s+/', ' ', strip_tags($metaDesc)));
+$cleanKeywords = trim(preg_replace('/\s+/', ' ', strip_tags($metaKeywords)));
 ?>
 
 <title>{{ $cleanTitle }}</title>

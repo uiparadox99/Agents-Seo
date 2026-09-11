@@ -303,24 +303,160 @@ Meta Description: Compare Umrah packages from Pakistan — Karachi, Lahore, Isla
     </ul>
     <p>Simply give us a call, share your requirements and budget, and we'll arrange your complete Umrah package as soon as you need it — through our network of verified <a href="{{url('agents')}}">travel agents</a> across Pakistan.</p>
 
-    <h2>Frequently Asked Questions (FAQs)</h2>
+    <div class="row mt-4 mb-4">
+        <div class="col-12">
+            <div class="faq-section p-4" style="background: #ffffff; border: 1px solid #e0e0e0; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.04);">
+                <div class="text-center mb-4">
+                    <span class="badge badge-warning px-3 py-2 text-white" style="font-size: 13px; text-transform: uppercase; letter-spacing: 1px; background: #f58220;">Frequently Asked Questions</span>
+                    <h2 class="mt-2" style="color: #070c39; font-weight: 700; font-size: 24px;">Umrah Packages FAQ</h2>
+                    <p class="text-muted" style="font-size: 14px;">Common queries regarding Umrah package pricing, inclusions, verified agents, and booking procedures.</p>
+                </div>
 
-    <h3>Q1: How much does an Umrah package from Pakistan cost?</h3>
-    <p>Prices vary based on duration, hotel category, and group size — basic economy packages typically start around PKR 150,000 per person. See our full <a href="{{url('umrah-cost-from-pakistan')}}">Umrah cost guide</a> for details.</p>
+                <div class="accordion" id="umrahFaqAccordion">
+                    <div class="card mb-2" style="border: 1px solid #e9ecef; border-radius: 8px; overflow: hidden;">
+                        <div class="card-header bg-white py-3" id="uHeadingOne" style="cursor: pointer;" data-toggle="collapse" data-target="#uCollapseOne" aria-expanded="true" aria-controls="uCollapseOne">
+                            <h3 class="mb-0" style="font-size: 16px; font-weight: 600; color: #070c39;">
+                                <i class="fas fa-question-circle text-warning mr-2"></i> How much does an Umrah package from Pakistan cost?
+                            </h3>
+                        </div>
+                        <div id="uCollapseOne" class="collapse show" aria-labelledby="uHeadingOne" data-parent="#umrahFaqAccordion">
+                            <div class="card-body text-secondary" style="font-size: 14px; line-height: 1.7;">
+                                Prices vary based on duration (10, 15, 21, or 28 days), hotel category (economy sharing vs. 4-star or 5-star near Haram), and travel season (Ramadan and school holidays are higher). Economy packages generally start from PKR 180,000 to PKR 250,000 per person including visa and flights, while 4-star and 5-star executive packages range from PKR 350,000 to PKR 650,000+ per person. See our comprehensive <a href="{{url('umrah-cost-from-pakistan')}}">Umrah cost from Pakistan guide</a> for updated estimates.
+                            </div>
+                        </div>
+                    </div>
 
-    <h3>Q2: Does the Umrah package include flights and hotel?</h3>
-    <p>Yes, most of our packages include return flights, hotel accommodation, and visa processing all together.</p>
+                    <div class="card mb-2" style="border: 1px solid #e9ecef; border-radius: 8px; overflow: hidden;">
+                        <div class="card-header bg-white py-3" id="uHeadingTwo" style="cursor: pointer;" data-toggle="collapse" data-target="#uCollapseTwo" aria-expanded="false" aria-controls="uCollapseTwo">
+                            <h3 class="mb-0" style="font-size: 16px; font-weight: 600; color: #070c39;">
+                                <i class="fas fa-question-circle text-warning mr-2"></i> What is typically included in an Umrah package?
+                            </h3>
+                        </div>
+                        <div id="uCollapseTwo" class="collapse" aria-labelledby="uHeadingTwo" data-parent="#umrahFaqAccordion">
+                            <div class="card-body text-secondary" style="font-size: 14px; line-height: 1.7;">
+                                Complete Umrah packages listed by our certified travel agents typically bundle return airline tickets, an official Saudi Umrah e-visa with mandatory health insurance, hotel accommodation in Makkah and Madinah, and intercity ground transportation (Jeddah airport to Makkah, Makkah to Madinah, and Madinah to airport). Many packages also include guided Ziyarat tours to historical and religious landmarks.
+                            </div>
+                        </div>
+                    </div>
 
-    <h3>Q3: Can I get an Umrah package from any city in Pakistan?</h3>
-    <p>Yes, we offer Umrah packages from major cities including Karachi, Lahore, Islamabad, Faisalabad, Multan, Peshawar, Quetta, and Sialkot.</p>
+                    <div class="card mb-2" style="border: 1px solid #e9ecef; border-radius: 8px; overflow: hidden;">
+                        <div class="card-header bg-white py-3" id="uHeadingThree" style="cursor: pointer;" data-toggle="collapse" data-target="#uCollapseThree" aria-expanded="false" aria-controls="uCollapseThree">
+                            <h3 class="mb-0" style="font-size: 16px; font-weight: 600; color: #070c39;">
+                                <i class="fas fa-question-circle text-warning mr-2"></i> Can I get an Umrah package from any city in Pakistan?
+                            </h3>
+                        </div>
+                        <div id="uCollapseThree" class="collapse" aria-labelledby="uHeadingThree" data-parent="#umrahFaqAccordion">
+                            <div class="card-body text-secondary" style="font-size: 14px; line-height: 1.7;">
+                                Yes! Our platform features verified travel agencies operating in all major hubs across Pakistan, including Karachi, Lahore, Islamabad, Faisalabad, Multan, Peshawar, Sialkot, and Quetta. Flights depart directly or via convenient connections from your local airport (KHI, LHE, ISB, MUX, PEW, SKT).
+                            </div>
+                        </div>
+                    </div>
 
-    <h3>Q4: What is the difference between Umrah and Hajj packages?</h3>
-    <p>Umrah can be performed any time of the year and has fewer rituals, while Hajj takes place only during Zul Hajj and includes additional obligations. Compare our <a href="{{url('hajj-packages-pakistan')}}">Hajj packages</a> if you're planning for Hajj instead.</p>
+                    <div class="card mb-2" style="border: 1px solid #e9ecef; border-radius: 8px; overflow: hidden;">
+                        <div class="card-header bg-white py-3" id="uHeadingFour" style="cursor: pointer;" data-toggle="collapse" data-target="#uCollapseFour" aria-expanded="false" aria-controls="uCollapseFour">
+                            <h3 class="mb-0" style="font-size: 16px; font-weight: 600; color: #070c39;">
+                                <i class="fas fa-question-circle text-warning mr-2"></i> What is the difference between economy and 5-star Umrah packages?
+                            </h3>
+                        </div>
+                        <div id="uCollapseFour" class="collapse" aria-labelledby="uHeadingFour" data-parent="#umrahFaqAccordion">
+                            <div class="card-body text-secondary" style="font-size: 14px; line-height: 1.7;">
+                                The primary differences are hotel proximity to the Haram, room occupancy, and ground transport. Economy packages usually place pilgrims in 3-star hotels 600m–1200m away (often with free 24/7 shuttle service) with quad or quint sharing rooms. 5-star packages feature luxury properties right in the Clock Tower complex or adjacent to the Haram courtyard (0–150 meters away), private double rooms, daily buffet breakfast, and private VIP GMC or coaster transfers.
+                            </div>
+                        </div>
+                    </div>
 
-    <h3>Q5: How do I book an Umrah package?</h3>
-    <p>Simply contact us with your preferred city, travel dates, and budget — our verified agents will arrange the complete package for you.</p>
+                    <div class="card mb-2" style="border: 1px solid #e9ecef; border-radius: 8px; overflow: hidden;">
+                        <div class="card-header bg-white py-3" id="uHeadingFive" style="cursor: pointer;" data-toggle="collapse" data-target="#uCollapseFive" aria-expanded="false" aria-controls="uCollapseFive">
+                            <h3 class="mb-0" style="font-size: 16px; font-weight: 600; color: #070c39;">
+                                <i class="fas fa-question-circle text-warning mr-2"></i> How do I compare and choose packages from different verified agents?
+                            </h3>
+                        </div>
+                        <div id="uCollapseFive" class="collapse" aria-labelledby="uHeadingFive" data-parent="#umrahFaqAccordion">
+                            <div class="card-body text-secondary" style="font-size: 14px; line-height: 1.7;">
+                                On Agents.com.pk, each listing clearly details the total price, airline, hotel names with exact walking distances to Masjid al-Haram and Masjid an-Nabawi, package duration, and agency credentials. You can contact agents directly via WhatsApp or phone to clarify inclusions and ask for photos or past pilgrim testimonials before paying.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card mb-2" style="border: 1px solid #e9ecef; border-radius: 8px; overflow: hidden;">
+                        <div class="card-header bg-white py-3" id="uHeadingSix" style="cursor: pointer;" data-toggle="collapse" data-target="#uCollapseSix" aria-expanded="false" aria-controls="uCollapseSix">
+                            <h3 class="mb-0" style="font-size: 16px; font-weight: 600; color: #070c39;">
+                                <i class="fas fa-question-circle text-warning mr-2"></i> Can packages be customized for families or senior citizens?
+                            </h3>
+                        </div>
+                        <div id="uCollapseSix" class="collapse" aria-labelledby="uHeadingSix" data-parent="#umrahFaqAccordion">
+                            <div class="card-body text-secondary" style="font-size: 14px; line-height: 1.7;">
+                                Absolutely. Most registered agents offer tailor-made customized Umrah packages where you can choose private room arrangements, request wheelchair-accessible hotels with elevators close to the Haram gates, specify private transport between cities, or add extra days in either Makkah or Madinah.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
-
 </section>
+
+@push('schema')
+@if(!request()->has('page'))
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How much does an Umrah package from Pakistan cost?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Prices vary based on duration (10, 15, 21, or 28 days), hotel category (economy sharing vs. 4-star or 5-star near Haram), and travel season. Economy packages generally start from PKR 180,000 to PKR 250,000 per person including visa and flights, while 4-star and 5-star executive packages range from PKR 350,000 to PKR 650,000+ per person."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What is typically included in an Umrah package?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Complete Umrah packages listed by our certified travel agents typically bundle return airline tickets, an official Saudi Umrah e-visa with mandatory health insurance, hotel accommodation in Makkah and Madinah, and intercity ground transportation between airports and hotels."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can I get an Umrah package from any city in Pakistan?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes! Our platform features verified travel agencies operating in all major hubs across Pakistan, including Karachi, Lahore, Islamabad, Faisalabad, Multan, Peshawar, Sialkot, and Quetta."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What is the difference between economy and 5-star Umrah packages?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The primary differences are hotel proximity to the Haram, room occupancy, and ground transport. Economy packages usually place pilgrims in 3-star hotels 600m–1200m away with quad or quint sharing rooms. 5-star packages feature luxury properties right near Haram courtyard (0–150 meters away), private double rooms, daily buffet breakfast, and private VIP transport."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How do I compare and choose packages from different verified agents?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "On Agents.com.pk, each listing clearly details the total price, airline, hotel names with exact walking distances to Masjid al-Haram and Masjid an-Nabawi, package duration, and agency credentials. You can contact agents directly via WhatsApp or phone to clarify inclusions before paying."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can packages be customized for families or senior citizens?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Absolutely. Most registered agents offer tailor-made customized Umrah packages where you can choose private room arrangements, request wheelchair-accessible hotels close to the Haram gates, specify private transport between cities, or adjust duration."
+            }
+        }
+    ]
+}
+</script>
+@endif
+@endpush
+
 @endsection
