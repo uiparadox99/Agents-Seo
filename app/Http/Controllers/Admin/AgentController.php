@@ -50,14 +50,13 @@ class AgentController extends Controller
            return redirect()->back();
         }
  
-        $agent = Agents::with('agentType', 'city', 'user', 'dtsAttachments')->withCount([
-            'foreignJobs as foreign_jobs_Count',
-            'visitors as total_visitors',
-            'visitors as today_visitors' => function($q){
-                $q->whereDate('created_at', date('Y-m-d',strtotime('today')));
-            }
-        ])
-        ->leftJoin('users', 'agents.users_id', 'users.id');
+        $agent = Agents::with('agentType', 'city', 'user', 'dtsAttachments')
+            ->withCount([
+                'foreignJobs as foreign_jobs_Count',
+                'visitors as total_visitors',
+            ])
+            ->leftJoin('users', 'agents.users_id', 'users.id');
+
         if(request()->path() == 'admin/agents'){
             $agent  = $agent->where('agents.is_foreign','!=',1); 
         }else{
@@ -100,14 +99,6 @@ class AgentController extends Controller
             $agent->where('agents.agent_type_id', $r->type);
         }
         
-        // if (!empty($r->plan)) {
-        //     if ($r->plan == 5) {
-        //         $agent->where('agent_subscriptions.plan_id', '!=', 6);
-        //     } else {
-        //         $agent->where('agent_subscriptions.plan_id', $r->plan);
-        //     }
-        // }
-        
         if (!empty($r->verified) || $r->verified == 0) {
             $agent->where('agents.dts_verified', $r->verified);
         }
@@ -126,6 +117,17 @@ class AgentController extends Controller
             $agent->where('agents.created_at', 'LIKE', '%' . $date . '%');
         }
         // Sorting
+        // Only add today_visitors withCount when explicitly sorting by it
+        // (it's expensive, so we avoid it for normal page loads)
+        $needTodayVisitorsForSort = !empty($r->orderby) && in_array($r->orderby, ['todayVisitsAsc', 'todayVisitsDesc']);
+        if ($needTodayVisitorsForSort) {
+            $agent->withCount([
+                'visitors as today_visitors' => function($q) {
+                    $q->whereDate('created_at', date('Y-m-d'));
+                }
+            ]);
+        }
+
         if (!empty($r->orderby)) {
             switch ($r->orderby) {
                 case 'todayVisitsAsc':
@@ -162,6 +164,21 @@ class AgentController extends Controller
                 'users.email as user_email'
             )
             ->paginate(50)->appends(request()->query());
+
+        // Compute today's visitor counts in a single fast query (instead of correlated subqueries)
+        $todayDate = date('Y-m-d');
+        $todayVisitorCounts = DB::table('visitors')
+            ->select('agents_id', DB::raw('COUNT(*) as today_count'))
+            ->whereDate('created_at', $todayDate)
+            ->whereIn('agents_id', $data['agents']->pluck('id')->toArray())
+            ->groupBy('agents_id')
+            ->pluck('today_count', 'agents_id');
+
+        // Inject today_visitors into each agent record
+        foreach ($data['agents'] as $agentItem) {
+            $agentItem->today_visitors = $todayVisitorCounts->get($agentItem->id, 0);
+        }
+
          if(request()->path() == 'admin/agents'){
       	$data['cities'] = AgentCity::orderBy('name','ASC')->get();
          }else{
@@ -171,6 +188,7 @@ class AgentController extends Controller
       	return view('admin.agents.manage-agents',$data);
       
       }
+
        public function saveAgent(Request $req){
 
         $validator = Validator::make(Input::all(), [
