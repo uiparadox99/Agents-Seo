@@ -26,9 +26,16 @@ class Blogs extends Model
 			if (file_exists(public_path('storage/uploads/blogs/' . $this->image))) {
 				return asset('storage/uploads/blogs/' . $this->image);
 			}
+			if (file_exists(base_path('storage/uploads/blogs/' . $this->image))) {
+				return asset('storage/uploads/blogs/' . $this->image);
+			}
+			if (file_exists(storage_path('app/public/uploads/blogs/' . $this->image))) {
+				return asset('storage/uploads/blogs/' . $this->image);
+			}
 			if (file_exists(public_path('uploads/blogs/' . $this->image))) {
 				return asset('uploads/blogs/' . $this->image);
 			}
+			return asset('storage/uploads/blogs/' . $this->image);
 		}
 		return asset('images/blog-default.jpg');
 	}

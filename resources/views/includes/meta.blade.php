@@ -92,10 +92,10 @@ if ($blogObj) {
     $title = "Cheap Umrah Flights — Group Fares by Verified Agents | Agents.com.pk";
     $metaDesc = "Compare live seat allocations and cheap Umrah group flight fares to Saudi Arabia uploaded directly by verified travel agents across Pakistan.";
     $metaKeywords = "Cheap Umrah Flights, Jeddah Flights, Madinah Air Tickets, Umrah Airfare Pakistan";
-} elseif (request()->is('umrah-hotels*')) {
-    $title = "Umrah Hotels Near Haram — Verified Agent Deals | Agents.com.pk";
-    $metaDesc = "Browse verified agent-listed hotel deals in Makkah and Madinah with walking distance to Haram and best group room rates.";
-    $metaKeywords = "Umrah Hotels, Makkah Hotels, Madinah Hotels, Haram Distance Hotels";
+} elseif (request()->is('umrah-hotels*') || request()->is('*/umrah-hotels*')) {
+    $title = "Umrah Hotels Near Haram Makkah & Madinah — Rates & Deals | Agents.com.pk";
+    $metaDesc = "Compare verified 3-star, 4-star, and 5-star Umrah hotels in Makkah and Madinah near Haram. Check real-time room rates (Double, Triple, Quad) from verified Pakistani travel agents.";
+    $metaKeywords = "Umrah Hotels, Makkah Hotels Near Haram, Madinah Hotels Near Masjid Nabawi, 5 Star Umrah Hotels, Cheap Umrah Hotels, Clock Tower Hotels Makkah, Umrah Hotel Booking Pakistan";
 } elseif (request()->is('about-us') || request()->is('about')) {
     $title = "About Us — Pakistan's Verified Travel Marketplace | Agents.com.pk";
     $metaDesc = "Learn how Agents.com.pk connects travelers directly with certified travel agents across Pakistan for cheap flights and Umrah packages.";

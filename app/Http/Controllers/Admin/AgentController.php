@@ -50,7 +50,7 @@ class AgentController extends Controller
            return redirect()->back();
         }
  
-        $agent = Agents::with('agentType', 'city','user')->withCount([
+        $agent = Agents::with('agentType', 'city', 'user', 'dtsAttachments')->withCount([
             'foreignJobs as foreign_jobs_Count',
             'visitors as total_visitors',
             'visitors as today_visitors' => function($q){
@@ -156,10 +156,11 @@ class AgentController extends Controller
             $agent->orderBy('agents.id', 'DESC');
         }
         
-        $data['agents'] = $agent->addSelect(
+        $data['agents'] = $agent->select(
+                'agents.*',
                 'users.visible_password as password',
                 'users.email as user_email'
-            )->groupBy('agents.id')
+            )
             ->paginate(50)->appends(request()->query());
          if(request()->path() == 'admin/agents'){
       	$data['cities'] = AgentCity::orderBy('name','ASC')->get();

@@ -91,6 +91,23 @@ Route::get('search-embassy-in-islamabad/{q}', 'HomeController@searchByAlpha')->n
 Route::get('blogs', 'HomeController@blogs')->name('blogs');
 Route::get('blog/{slug}', 'HomeController@blogDetail')->name('blog-detail');
 
+Route::get('storage/uploads/{folder}/{file}', function ($folder, $file) {
+    $paths = [
+        public_path("storage/uploads/{$folder}/{$file}"),
+        base_path("storage/uploads/{$folder}/{$file}"),
+        storage_path("app/public/uploads/{$folder}/{$file}"),
+        public_path("uploads/{$folder}/{$file}"),
+    ];
+
+    foreach ($paths as $path) {
+        if (file_exists($path)) {
+            return response()->file($path);
+        }
+    }
+
+    abort(404);
+})->where('file', '.*')->name('storage.uploads');
+
 Route::get('execute-sitemaps', 'HomeController@runSitemap')->name('execute-sitemaps');
 
 Route::get('generate-agent-codes', 'AgentController@AgentCodesScript')->name('generate-agent-codes');

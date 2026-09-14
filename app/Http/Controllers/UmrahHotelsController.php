@@ -66,6 +66,14 @@ class UmrahHotelsController extends Controller
 		$data['searchotel'] = UmrahHotels::join('hotels','hotels.id','umrah_hotels.hotels_id')->select('hotels.*')->orderBy('hotels.name','ASC')->groupBy('hotels.id')->get();
 		$data['types'] = HotelCategory::orderBy('id','DESC')->get();
 
+		if (isset($data['agentDetail']) && !is_null($data['agentDetail'])) {
+			$data['meta_title'] = $data['agentDetail']->business_name . " — Umrah Hotels in Makkah & Madinah | Agents.com.pk";
+			$data['meta_description'] = "Book verified Makkah & Madinah Umrah hotel deals by " . $data['agentDetail']->business_name . ". Best rates near Haram for double, triple, and quad sharing.";
+		} else {
+			$data['meta_title'] = "Umrah Hotels Near Haram Makkah & Madinah — Rates & Deals | Agents.com.pk";
+			$data['meta_description'] = "Compare verified 3-star, 4-star, and 5-star Umrah hotels in Makkah and Madinah near Haram. Check real-time room rates (Double, Triple, Quad) from verified Pakistani travel agents.";
+		}
+
 		if($r->ajax()){
 			$hotels = $data['hotels'];
 			$view = view('partials.load-umrah-hotels',compact('hotels'))->render();

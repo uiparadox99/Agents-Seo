@@ -22,8 +22,8 @@
                     <!--<li class="{{ Request::is('admin/manage-plans') ? 'active' : '' }}">-->
                     <!--    <a href="{{ url('admin/manage-plans')}}"><i class="fa fa-tasks"></i> Agent Status</a>-->
                     <!--</li>-->
-                    <li class="{{ Request::is('admin/agent-types') ? 'active' : '' }}">
-                        <a href="{{ url('admin/agent-types') }}"><i class="fa fa-puzzle-piece"></i> <span>Manage Agents Type</span></a>
+                    <li class="{{ Request::is('admin/agent-types/') ? 'active' : '' }}">
+                        <a href="{{ url('admin/agent-types/') }}"><i class="fa fa-puzzle-piece"></i> <span>Manage Agents Type</span></a>
                     </li>
                 
                     

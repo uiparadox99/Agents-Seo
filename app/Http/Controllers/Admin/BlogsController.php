@@ -50,11 +50,24 @@ class BlogsController extends Controller
         if (!empty($req->image)) {
             $filename = Input::file('image')->getClientOriginalName();
             $value = $fileNewName = Guid()."-".preg_replace('/\s/', '-',$filename);
-            $uploadDir = public_path('storage/uploads/blogs');
-            if (!file_exists($uploadDir)) {
-                mkdir($uploadDir, 0777, true);
+            
+            $targetDirs = [
+                public_path('storage/uploads/blogs'),
+                base_path('storage/uploads/blogs'),
+                storage_path('app/public/uploads/blogs'),
+            ];
+
+            foreach ($targetDirs as $dir) {
+                if (!file_exists($dir)) {
+                    @mkdir($dir, 0777, true);
+                }
             }
-            Input::file('image')->move($uploadDir, $fileNewName);
+
+            Input::file('image')->move($targetDirs[0], $fileNewName);
+
+            for ($i = 1; $i < count($targetDirs); $i++) {
+                @copy($targetDirs[0] . '/' . $fileNewName, $targetDirs[$i] . '/' . $fileNewName);
+            }
 
             $blog->image          = $fileNewName;
         }
