@@ -46,10 +46,24 @@ protected $table = 'tour_packages';
         return $this->hasMany('App\TourPackagesPrices', 'tour_packages_id');
     }
 
- 
+    public function productReviews()
+    {
+        return $this->hasMany('App\ProductReview', 'product_id')->where('product_type', 'tour');
+    }
 
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    
+    public function approvedProductReviews()
+    {
+        return $this->productReviews()->where('approved', 1);
+    }
+
+    public function getStartingPriceAttribute()
+    {
+        if (!empty($this->price)) {
+            $num = (float) str_replace(',', '', (string) $this->price);
+            if ($num > 0) {
+                return $num;
+            }
+        }
+        return null;
+    }
 }

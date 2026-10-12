@@ -215,6 +215,7 @@ Route::get('phone-number', 'AgentController@phoneNumber')->name('phoneNumber');
 
 Route::get('active-review', 'AgentController@activeReview')->name('user.active-review');
 Route::post('save-claim-business', 'AgentController@saveClaimedBusiness')->name('user.save-claim-business');
+Route::post('product-reviews', 'ProductReviewController@store')->name('product.reviews.store')->middleware('throttle:5,1');
 
 Auth::routes();
 Route::post('/promotion-gallery', 'User\HomeController@activePromotions')->name('user.promotion-gallery');
@@ -645,6 +646,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::get('/agent-subscriptions/{?id}', 'Admin\AgentController@agentSubscription')->name('admin.agent-subscriptions');
 
     Route::get('/agent-reviews', 'Admin\AgentController@agentReviews')->name('admin.agent-reviews');
+    Route::get('/product-reviews', 'Admin\ProductReviewAdminController@index')->name('admin.product-reviews.index');
+    Route::post('/product-reviews/toggle', 'Admin\ProductReviewAdminController@toggleApprove')->name('admin.product-reviews.toggle');
+    Route::delete('/product-reviews/{id}', 'Admin\ProductReviewAdminController@destroy')->name('admin.product-reviews.destroy');
 
     Route::get('/agent-promotions', 'Admin\AgentController@agentPromotions')->name('admin.agent-promotions');
     Route::get('/approve-promotion', 'Admin\AgentController@approvePromotion')->name('admin.approve-promotion');

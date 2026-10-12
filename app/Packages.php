@@ -48,6 +48,34 @@ class Packages extends Model
     {
         return $this->belongsTo('App\Cities', 'hotels.id','hotel_madinah');
     }
-	
 
+    public function productReviews()
+    {
+        return $this->hasMany('App\ProductReview', 'product_id')->where('product_type', 'package');
+    }
+
+    public function approvedProductReviews()
+    {
+        return $this->productReviews()->where('approved', 1);
+    }
+
+    public function getStartingPriceAttribute()
+    {
+        $candidates = [
+            $this->shairing,
+            $this->quad_room,
+            $this->triple_room,
+            $this->double_room,
+        ];
+        $valid = [];
+        foreach ($candidates as $c) {
+            if (!empty($c)) {
+                $num = (float) str_replace(',', '', (string) $c);
+                if ($num > 0) {
+                    $valid[] = $num;
+                }
+            }
+        }
+        return !empty($valid) ? min($valid) : null;
+    }
 }

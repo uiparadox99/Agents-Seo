@@ -30,6 +30,9 @@
                     <li class="{{ Request::is('admin/agent-reviews') ? 'active' : '' }}">
                         <a href="{{ url('admin/agent-reviews') }}"><i class="fa fa-puzzle-piece"></i> <span>Manage Agents Reviews</span></a>
                     </li>
+                    <li class="{{ Request::is('admin/product-reviews*') ? 'active' : '' }}">
+                        <a href="{{ url('admin/product-reviews') }}"><i class="fa fa-star"></i> <span>Manage Product Reviews</span></a>
+                    </li>
                     <li class="{{ Request::is('admin/agent-cities') ? 'active' : '' }}">
                         <a href="{{ url('admin/agent-cities') }}"><i class="fa fa-puzzle-piece"></i> <span>Manage Agent Cities</span></a>
                     </li>

@@ -402,6 +402,8 @@
     @endif
 
 
+    @include('partials.product-reviews', ['product' => $detail, 'type' => 'package'])
+
 </section>
 @endsection
 @push('script')
@@ -437,129 +439,5 @@
 @endpush
 
 @push('schema')
-@php
-    $activeReviews = ($detail->agent && method_exists($detail->agent, 'agentReviews')) ? $detail->agent->agentReviews()->where('active', 1)->take(5)->get() : collect();
-    $reviewCount = $activeReviews->count();
-    $avgRating = ($reviewCount > 0) ? round($activeReviews->avg('rating'), 1) : 0;
-    $rawPrice = !empty($detail->price) ? (float) str_replace(',', '', $detail->price) : 0;
-@endphp
-<script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@graph": [
-        {
-            "@type": "Product",
-            "@id": "{{ request()->url() }}#package",
-            "name": "{{ addslashes($detail->name) }}",
-            "description": "{{ addslashes(str_limit(strip_tags($detail->content1 ?? $detail->name), 160)) }}",
-            "url": "{{ request()->url() }}",
-            @if(!empty($detail->image))
-            "image": "{{ url('storage/uploads/packages/' . $detail->image) }}",
-            @endif
-            "sku": "UMRAH-PKG-{{ $detail->id }}",
-            "brand": {
-                "@type": "Brand",
-                "name": "{{ !empty($detail->agent->business_name) ? addslashes($detail->agent->business_name) : 'Agents.com.pk' }}"
-            },
-            @if($reviewCount > 0)
-            "aggregateRating": {
-                "@type": "AggregateRating",
-                "ratingValue": "{{ $avgRating > 0 ? $avgRating : 5 }}",
-                "reviewCount": "{{ $reviewCount }}",
-                "bestRating": "5",
-                "worstRating": "1"
-            },
-            "review": [
-                @foreach($activeReviews as $rKey => $rev)
-                {
-                    "@type": "Review",
-                    "author": {
-                        "@type": "Person",
-                        "name": "{{ !empty($rev->name) ? addslashes($rev->name) : 'Verified Traveler' }}"
-                    },
-                    "reviewRating": {
-                        "@type": "Rating",
-                        "ratingValue": "{{ $rev->rating ?? 5 }}",
-                        "bestRating": "5",
-                        "worstRating": "1"
-                    },
-                    "reviewBody": "{{ addslashes(str_limit(strip_tags($rev->message ?? 'Excellent service and package arrangement.'), 150)) }}"
-                }{{ $rKey < count($activeReviews) - 1 ? ',' : '' }}
-                @endforeach
-            ],
-            @endif
-            "offers": {
-                "@type": "Offer",
-                "priceCurrency": "PKR",
-                "price": "{{ $rawPrice > 0 ? $rawPrice : '0' }}",
-                "priceValidUntil": "{{ date('Y-12-31') }}",
-                "availability": "https://schema.org/InStock",
-                "url": "{{ request()->url() }}",
-                "seller": {
-                    "@type": "Organization",
-                    "name": "{{ !empty($detail->agent->business_name) ? addslashes($detail->agent->business_name) : 'Agents.com.pk' }}"
-                },
-                "hasMerchantReturnPolicy": {
-                    "@type": "MerchantReturnPolicy",
-                    "applicableCountry": "PK",
-                    "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
-                    "merchantReturnDays": 7,
-                    "returnMethod": "https://schema.org/ReturnByMail",
-                    "returnFees": "https://schema.org/FreeReturn"
-                },
-                "shippingDetails": {
-                    "@type": "OfferShippingDetails",
-                    "shippingRate": {
-                        "@type": "MonetaryAmount",
-                        "value": "0",
-                        "currency": "PKR"
-                    },
-                    "shippingDestination": {
-                        "@type": "DefinedRegion",
-                        "addressCountry": "PK"
-                    },
-                    "deliveryTime": {
-                        "@type": "ShippingDeliveryTime",
-                        "handlingTime": {
-                            "@type": "QuantitativeValue",
-                            "minValue": 0,
-                            "maxValue": 1,
-                            "unitCode": "DAY"
-                        },
-                        "transitTime": {
-                            "@type": "QuantitativeValue",
-                            "minValue": 0,
-                            "maxValue": 0,
-                            "unitCode": "DAY"
-                        }
-                    }
-                }
-            }
-        },
-        {
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-                {
-                    "@type": "ListItem",
-                    "position": 1,
-                    "name": "Home",
-                    "item": "https://agents.com.pk/"
-                },
-                {
-                    "@type": "ListItem",
-                    "position": 2,
-                    "name": "Umrah Packages",
-                    "item": "https://agents.com.pk/cheap-umrah-packages"
-                },
-                {
-                    "@type": "ListItem",
-                    "position": 3,
-                    "name": "{{ addslashes($detail->name) }}",
-                    "item": "{{ request()->url() }}"
-                }
-            ]
-        }
-    ]
-}
-</script>
+    @include('partials.product-schema', ['product' => $detail, 'type' => 'package'])
 @endpush
